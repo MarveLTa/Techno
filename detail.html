@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/font-icon.css" />
+  <link rel="stylesheet" href="owl/dist/assets/owl.carousel.min.css" />
+  <link href="fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary sticky-top" style="z-index: 8888;">
+        <div class="container">
+          <a class="navbar-brand" href=".">
+            <img src="images/logo_inline.png" height="30" alt="logo">
+          </a>
+          <form class="form-inline" style="width: 60%;" onsubmit="return searcha()">
+            <div class="input-group w-75 float-right" style="margin-left: auto;">
+              <div class="input-group-prepend ">
+                <i class="material-icons input-group-text bg-white">search</i>
+              </div>
+              <input
+                id="search"
+                class="form-control mr-4"
+                type="search"
+                placeholder="Cari"
+                aria-label="Search"
+              />
+            </div>
+          </form>
+          
+           <!-- Dropdown -->
+          <div class="dropdown ">
+            <a
+            id="account_action"
+            class="nav-item nav-link active self align-middle text-white dropdown-toggle  d-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            href="./profile.html"
+            ><i class="fas fa-user mr-2"></i>Hi, <span id="account_name" style="max-width: 100px;">Jo Vianto</span> <i class="fas fa-chevron-down ml-1"></i></a
+            >
+            <div class="dropdown-menu  dropdown-menu-right" id="account_menu" aria-labelledby="account_action" style="margin-top: -1px;">
+              <a class="dropdown-item" href="profil.html?show=v-pills-home"><i class="fas fa-user mr-3"></i>Akun</a>
+              <a class="dropdown-item" href="profil.html?show=v-pills-books"><i class="fas fa-book mr-3"></i>Buku Kamu</a>
+              <a class="dropdown-item" href="profil.html?show=v-pills-wishlist"><i class="fas fa-heart mr-3"></i><span class="mr-5">Buku Impian</span> <span class="badge badge-pill badge-primary px-2 mr-2"><b  class="wishList_number">0</b></span></a>
+              <a class="dropdown-item" href="#" onclick="logout();"><i class="fas fa-door-open mr-3"></i>Keluar</a>
+            </div>
+          </div>
+          
+          <a
+            id="login_action"
+            class=" nav-item nav-link active self align-middle text-white border rounded"
+            href="./login.html"
+            ><b>Masuk</b></a
+          >
+          <a class=" btn d-inline nav-item nav-link align-middle" style="position: relative;" href="keranjang.html">
+            <i class="material-icons text-white align-middle">
+              shopping_cart
+            </i>
+            <span class="badge badge-danger d-none" id="cart_number" style="position: absolute; top: 6px; right: 6px;">0</span>
+          </a>
+        </div>
+      </nav>
+  <div class="container">
+    <div class="card my-4 shadow-sm" style="border: none;border-radius: 0;">
+      <h5 id="detail_judul1"  class="card-header">Judul Buku</h5>
+      <div class="card-body pt-5">
+        <div class="row pr-5">
+          <div class="col-4">
+            <img
+            id="detail_image"
+            class="detail-pic"
+              src="https://cdn.gramedia.com/uploads/items/Syekh_Abdul_Qadir_Jailani_Karamah__Nasihat__w200_hauto.jpg"
+              alt="Tuner Image"
+            />
+            <button id="wishlistbtn" class="btn-block mt-4 text-danger border border-danger mx-auto" style="border-radius: 18px; padding-left: 0; border-style: none; background: transparent; position: relative;"><i class="fab fa-gratipay float-left" style="height: 32px; width: 32px;"></i> <div class="align-middle my-auto " style="height: 100%; padding-top: 4px;">Buku Impian</div></button>
+          </div>
+          <div class="col-8 pr-3">
+            <div class="row">
+              <div class="col-3 pl-4 detail-column-name">
+                <b>Judul</b>
+              </div>
+              <div class="col-9">
+                <p id="detail_judul" class="card-text" style="font-weight: 400; font-size: 16px;"></p>
+              </div>
+            </div>
+            <hr/>
+            <div class="row">
+              <div class="col-3 pl-4 detail-column-name">
+                <b>Harga</b>
+              </div>
+              <div class="col-9">
+                <p class="card-text text-orange mb-1" ><b id="detail_harga" style="font-weight: 900; font-size: 18px;"></b></p>
+                <p class="card-text d-none text-muted" id="harga_asli_container"><del id="harga_asli">200</del></p>
+              </div>
+            </div>
+            <hr/>
+            <div class="row">
+              <div class="col-3 pl-4 detail-column-name">
+                <b>Jenis</b>
+              </div>
+              <div class="col-9">
+                <p id="detail_genre" class="card-text" style="font-weight: 300; font-size: 14px;"></p>
+              </div>
+            </div>
+            <hr/>
+            <div class="row">
+              <div class="col-3 pl-4 detail-column-name">
+                <b>Penulis</b>
+              </div>
+              <div class="col-9 ">
+                  <p id="detail_penulis" class="card-text" style="font-weight: 300; font-size: 14px;"></p>
+              </div>
+            </div>
+            <hr/>
+            <div class="row">
+              <div class="col-3 pl-4 detail-column-name">
+                <b>Jumlah Hal.</b>
+              </div>
+              <div class="col-9">
+                  <p id="detail_jmlh_hal" class="card-text" style="font-weight: 300; font-size: 14px;"></p>
+              </div>
+            </div>
+            <hr/>
+            <div class="row">
+              <div class="col-3 pl-4 detail-column-name">
+                <b>Tanggal Terbit</b>
+              </div>
+              <div class="col-9">
+                  <p id="detail_tgl_terbit" class="card-text" style="font-weight: 300; font-size: 14px;"></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-3 pl-4 detail-column-name">
+                <b>Penerbit</b>
+              </div>
+              <div class="col-9">
+                  <p id="detail_penerbit" class="card-text" style="font-weight: 300; font-size: 14px;"></p>
+              </div>
+            </div>
+            <hr/>
+            <div class="row">
+              <div class="col p-4">
+                <button class="btn btn-warning btn-lg btn-block"  id="btn-beli-sekarang" style="background-color: var(--orange);"><b class="text-white" style="font-size: 16px;">BELI SEKARANG</b></button>
+              </div>
+              <div class="col p-4">
+                <button class="btn btn-primary btn-lg btn-block" id="btn-tambah-keranjang" style="background-color: var(--primary);"><b style="font-size: 16px;">TAMBAH KE KERANJANG</b></button>
+              </div>
+            </div>
+            <div class="row px-4 pt-2">
+              <span class="border rounded p-1"><i class="material-icons align-middle mr-1 text-secondary">share</i> <span class="text-secondary mr-2" style="font-size: 12px;"> Bagikan</span>
+                <a href="https://www.facebook.com" class="sosmed align-middle"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" class="sosmed align-middle"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" class="sosmed align-middle"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" class="sosmed align-middle"><i class="fab fa-linkedin-in"></i></a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card mb-4 shadow-sm">
+      <nav class="card-header bg-primary pb-0">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border: none;">
+          <a class="detail-nav nav-item nav-link active text-white" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Sinopsis</a>
+          <a class="detail-nav nav-item nav-link text-white" id="nav-profile-tab" data-toggle="tab" href="#nav-panel_komentar" role="tab" aria-controls="nav-panel_komentar" aria-selected="false">Review<i class="fa fa-star ml-3 mr-0"></i>  <span class="align-middle" id="total_rating"></span></a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active card-body bg-white" id="nav-home" role="tabpanel">
+          <p id="detail_sinopsis" class="mt-2 text-secondary">
+          </p>    
+        </div>
+        <div class="tab-pane fade card-body bg-white" id="nav-panel_komentar" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <!-- <div id="" class="card mb-2">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="ml-4 image-fluid overflow-hidden rounded-circle border" style="height: 80px; width: 80px;">
+                    <img class="img-fluid" src="https://instagram.fjog3-1.fna.fbcdn.net/vp/566d70d17c316003f326f9493cbcbda6/5E7C6CF8/t51.2885-19/s150x150/73239630_468031774064861_2987087825234558976_n.jpg?_nc_ht=instagram.fjog3-1.fna.fbcdn.net&_nc_cat=105" alt="pp">
+                </div>
+                <div class="ml-3 align-middle mb-3">
+                    <div><b>Jo Vianto</b></div>
+                    <div style="font-weight: 300;">24 Juli 2019</div>
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+                </div>
+              </div>
+              <hr>
+              <div class="row px-4 pt-2">
+                <p class="mt-0 text-secondary">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p> 
+              </div>
+            </div>
+            <div class="card-footer text-muted px-4" style="font-size: 12px;">
+              <span class="ml-2 mr-2 align-middle">Apakah review ini membantu Anda?</span>
+              <i class="far fa-thumbs-up align-middle" style="height: 20px; width: 20px;"></i>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    
+    <h5 class="mb-4 mt-5">Rekomendasi Untuk Kamu</h5>
+    <div class="d-flex flex-row justify-content-between flex-wrap rekomendasi-container mb-4">
+    </div>
+  </div>
+  <div class="modal fade" id="tambahKeranjangModal" style="z-index: 10000;" tabindex="-1" role="dialog" aria-labelledby="tambahKeranjangTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Tambah keranjang berhasil</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-4">
+                      <div class="ml-2 mr-2 image-container" style="max-height: 100px;">
+                        <img id="modal_detail_image" class="mx-auto" src="" alt="pp" style="display: block;">
+                      </div>
+                  </div>
+                  <div class="col-8">
+                    <div class="row">
+                      <p style="font-size: 16px; max-lines: 2; text-overflow:clip; overflow: hidden;" class="mb-1 text-uppercase"id="modal_detail_judul"> </p>
+                    </div>
+                    <div class="row">
+                      <div class="text-muted" id="modal_detail_genre" style="font-size: 14px;">Genre</div>
+                    </div>
+                    <div class="row">
+                      <div class="text-orange" ><b id="modal_detail_harga">Harga</b></div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="window.location.href = 'keranjang.html'">Lihat Keranjang</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="account-modal-backdrop" class="modal-backdrop fade" aria-labelledby="account_action" style="z-index: -1;"></div>
+</body>
+<footer>
+  <div class="container pt-5 border-bottom">
+    <div class="row">
+      <div class="col-md-3 col-sm-12 mb-3 text-center">
+        <img src="images/logo_block.png" alt="logo footer" width="100%">
+      </div>
+      <div class="col-md-9 col-sm-12">
+
+        <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Bantuan</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="../sales/sales-performance-market-pipeline.html">Pembayaran</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="/project-management/project-management.html">Pengiriman</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="../workforce/workforce-organization-management-hr.html">Status Pemesanan</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../e-commerce/e-commerce.html"> Cara
+                Berbelanja</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-4"><a
+                href="../finance/finance-accounting-erp.html">Kerja Sama</a></li>
+            <h5 class="mb-4 font-weight-bold text-uppercase">Customer Care</h5>
+            <ul class="list-group">
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#"><b>Buka 24 jam setiap hari</b></a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#" target="_blank"><i class="fas fa-phone-alt mr-1"></i> 081517090386</a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#" target="_blank"><i class="fas fa-envelope mr-1"></i> cs@atmabooks.co.id</a>
+              </li>
+            </ul>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Pembayaran</h5>
+          <div class="d-flex flex-wrap pr-2">
+            <a href="#" style="margin: 2px;"><img src="images/bni.png" alt="bni" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/bri.png" alt="bri" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/cimb.png" alt="cimb" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/visa.png" alt="visa" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/bca.png" alt="bca" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/indomaret.png" alt="indomaret"
+                class="border border-secondary mb-2" style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/mandiri.png" alt="mandiri"
+                class="border border-secondary mb-2" style="border-radius: 5px"></a>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left pl-1">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Info Kami</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tentang</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i> Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Ikuti kami</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#"><i class="fab fa-twitter mr-1"></i> Twitter</a>
+            </li class="list-group-item bg-transparent border-0 p-0 mb-2">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-google-plus mr-1"></i> Google+</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-medium mr-1"></i> Medium</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-facebook mr-1"></i> Facebook</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-youtube mr-1"></i> YouTube</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="py-4 d-flex float-left mt-2">
+            <span style="font-size: 14px; font-weight: 300;">Dibuat dengan <i class="fas fa-heart"></i> & <i
+                class="fas fa-coffee"></i> di Jogjakarta, oleh Jo Vianto, Aldi, Hendry, Iche</span>
+          </div>
+        </div>
+        <div class="col-md-6 float-left">
+          <div class="py-4 d-flex float-right  mt-2">
+            <p style="font-size: 14px; font-weight: 300; " class="mr-4 text-gray">&copy; Atma BookStore</p>
+            <a class="mr-4 text-white" href="../privacy.html">Privasi <i class="fas fa-plus"></i> Kebijakan</a>
+            <a class="text-white" href="../sitemap.xml">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-4.3.1-dist/js/jquery-3.4.1.min.js"></script>
+  <script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
+  <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="owl/dist/owl.carousel.min.js"></script>
+  <script src="fontawesome-free-5.11.2-web/js/all.js"></script>
+  <script src="controller/main.js"></script>
+  <script src="controller/detail.js"></script>
+  <script>
+    $.getJSON("json/all.json", function (json) {
+        i = 0;
+        json.forEach(element => {
+            $(".rekomendasi-container").append('<a href="detail.html'+"?from=all.json&id="+i+'" class= "overflow-hidden flex-shrink-1 rounded shadow" style="width: 176px; margin-bottom:12px"><div class=" bg-white text-dark">' +
+            '<div class="image-container">'+
+            '<img src="'+element.photoUrl+'" alt="Tuner Image" class="d-block mx-auto"/>'+
+            '</div>'+
+            '<div class="p-2 pb-3">'+
+              '<div class="text-truncate katalog-judul">'+
+                element.judul+
+              '</div>'+
+                '<div class=" katalog-pengarang text-truncate">'+element.pengarang+'</div>'+
+                '<div class=" katalog-harga mt-1">'+formatter.format(element.harga - element.harga * ((element.persenDiskon === undefined || element.persenDiskon == 0 ) ? 0 : element.persenDiskon)/100)+'</div>'+
+                '<div class=" katalog-diskon">'+((element.persenDiskon === undefined || element.persenDiskon == 0 ) ? "-": '<del class="mr-2">'+ formatter.format(element.harga) +'</del>'+ '<span class="badge badge-danger">'+element.persenDiskon + ' %'+'</span>') +'</div>'+
+              '</div>'+
+            '</div></a>')
+            i++;
+        });
+    })</script>
+</footer>
+
+</html>

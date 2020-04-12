@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/font-icon.css" />
+    <link rel="stylesheet" href="owl/dist/assets/owl.carousel.min.css" />
+    <link href="fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary sticky-top" style="z-index: 8888;">
+      <div class="container">
+        <a class="navbar-brand" href=".">
+          <img src="images/logo_inline.png" height="30" alt="logo">
+        </a>
+        <form class="form-inline" style="width: 60%;" onsubmit="return searcha()">
+          <div class="input-group w-75 float-right" style="margin-left: auto;">
+            <div class="input-group-prepend ">
+              <i class="material-icons input-group-text bg-white">search</i>
+            </div>
+            <input
+              id="search"
+              class="form-control mr-4"
+              type="search"
+              placeholder="Cari"
+              aria-label="Search"
+            />
+          </div>
+        </form>
+        
+         <!-- Dropdown -->
+        <div class="dropdown ">
+          <a
+          id="account_action"
+          class="nav-item nav-link active self align-middle text-white dropdown-toggle  d-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          href="./profile.html"
+          ><i class="fas fa-user mr-2"></i>Hi, <span id="account_name" style="max-width: 100px;">Jo Vianto</span> <i class="fas fa-chevron-down ml-1"></i></a
+          >
+          <div class="dropdown-menu  dropdown-menu-right" id="account_menu" aria-labelledby="account_action" style="margin-top: -1px;">
+            <a class="dropdown-item" href="profil.html?show=v-pills-home"><i class="fas fa-user mr-3"></i>Akun</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-books"><i class="fas fa-book mr-3"></i>Buku Kamu</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-wishlist"><i class="fas fa-heart mr-3"></i><span class="mr-5">Buku Impian</span> <span class="badge badge-pill badge-primary px-2 mr-2"><b  class="wishList_number">0</b></span></a>
+            <a class="dropdown-item" href="#" onclick="logout();"><i class="fas fa-door-open mr-3"></i>Keluar</a>
+          </div>
+        </div>
+        
+        <a
+          id="login_action"
+          class=" nav-item nav-link active self align-middle text-white border rounded"
+          href="./login.html"
+          ><b>Masuk</b></a
+        >
+        <a class=" btn d-inline nav-item nav-link align-middle" style="position: relative;" href="keranjang.html">
+          <i class="material-icons text-white align-middle">
+            shopping_cart
+          </i>
+          <span class="badge badge-danger d-none" id="cart_number" style="position: absolute; top: 6px; right: 6px;">0</span>
+        </a>
+      </div>
+    </nav>
+    <div class="container my-5 text-muted px-5 pb-4" style="border-left-style: solid; border-right-style: solid; border-color: rgb(209, 209, 209); border-left-width: 1px; border-right-width: 1px; ">
+        <div class="col">
+          <div class="row text-dark">Panduan pembayaran pada Atma BookStore
+          </div>
+          <div class="row" style="font-size: 13px;">
+              Berikut adalah beberapa QnA yang sering ditanyakan oleh pengguna
+          </div>
+        </div>
+        <hr >
+        <p>
+          
+        </p>
+        <a href="#collapse1" data-toggle="collapse" role="button" aria-expanded="false" class="w-100 row text-dark collapse-button" aria-controls="collapse1">
+          <div class="col-11">Bagaimana cara melakukan pembayaran transfer?</div>
+          <div class=" col-1">
+              <i class="material-icons collapse-icon float-right">keyboard_arrow_right</i>  
+              
+            </div> 
+             
+        </a>
+        <hr>
+        <div class="collapse multi-collapse" id="collapse1">
+            <p>
+              Pembayaran melalui metode transfer dapat dilakukan melalui metode berikut (klik untuk panduan):<br><br>
+              Bank BCA<br>
+              Bank BRI<br>
+              Bank Mandiri<br>
+              Bank Danamon<br>
+              Bank BNI<br>
+              Bank Lainnya<br>
+              ATM Bersama<br>
+              Non ATM<br>
+              Nominal minimum pembayaran transfer adalah Rp 10.000.
+            </p>
+        </div>
+        <a href="#collapse2" data-toggle="collapse" role="button" aria-expanded="false" class="w-100 row text-dark collapse-button" aria-controls="collapse2">
+          <div class="col-11">Bagaimana cara melakukan pembayaran transfer Bank BRI?</div>
+          <div class=" col-1">
+              <i class="material-icons collapse-icon float-right">keyboard_arrow_right</i>  
+              
+            </div> 
+             
+        </a>
+        <hr>
+        <div class="collapse multi-collapse" id="collapse2">
+            <p>
+              Melalui ATM<br>
+
+              1. Masukkan kartu ATM dan PIN BRI kamu<br>
+
+              2. Pada menu utama, pilih menu “Transaksi Lain” > “Pembayaran” > “Lainnya” > “BRIVA”<br>
+
+              3. Masukkan nomor BRIVA<br>
+
+              4. Di halaman konfirmasi, pastikan data transaksi sudah benar kemudian pilih “Ya“<br><br>
+
+              Melalui Mobile Banking BRI<br>
+
+              1. Akses BRI Mobile Banking melalui handphone<br>
+
+              2. Pilih “Mobile Banking BRI”<br>
+
+              3. Pilih menu “Info“, lalu pilih “BRIVA”<br>
+
+              4. Masukkan nomor BRIVA<br>
+
+              5. Masukkan jumlah pembayaran sesuai tagihan<br>
+
+              6. Masukkan PIN kamu<br><br>
+
+              Melalui Internet Banking BRI<br>
+
+              1. Masuk ke https://ib.bri.co.id/ib-bri/<br>
+
+              2. Masukkan Username dan Password<br>
+
+              3. Pilih menu “Pembayaran“, lalu pilih “BRIVA”<br>
+
+              4. Masukkan nomor BRIVA<br>
+
+              5. Pastikan data transaksi sudah benar<br>
+
+              6. Masukkan password kamu<br>
+
+              7. Masukkan mToken kamu
+            </p>
+        </div>
+        <a href="#collapse3" data-toggle="collapse" role="button" aria-expanded="false" class="w-100 row text-dark collapse-button" aria-controls="collapse3">
+          <div class="col-11">Bagaimana cara melakukan pembayaran transfer Bank BCA?</div>
+          <div class=" col-1">
+              <i class="material-icons collapse-icon float-right">keyboard_arrow_right</i>  
+              
+            </div> 
+             
+        </a>
+        <hr>
+        <div class="collapse multi-collapse" id="collapse3">
+            <p>
+              Melalui ATM<br>
+              1. Masukkan kartu ATM dan PIN BCA kamu.<br>
+
+              2. Pada menu utama, pilih menu ” Transaksi lainnya “.<br>
+
+              3. Pilih menu “Transfer” dan kemudian pilih “BCA Virtual Account“.<br>
+
+              4. Masukkan no. BCA Virtual Account & klik “Lanjutkan“.<br>
+
+              5. Periksa kembali rincian pembayaran kamu, lalu pilih Ya.<br><br>
+              Melalui M-BCA<br>
+
+              1. Lakukan log in pada aplikasi BCA mobile.<br>
+
+              2. Pilih “m-BCA” masukan kode akses m-BCA.<br>
+
+              3. Pilih “m-Transfer“.<br>
+
+              4. Pilih “BCA Virtual Account“.<br>
+
+              5. Masukkan nomor BCA Virtual Account dan klik “OK“.<br>
+
+              6. Konfirmasi no virtual account dan rekening pendebetan<br>
+
+              7. Periksa kembalian rincian pembayaran kamu, lalu klik “Ya”<br>
+
+              8. Masukan pin m-BCA.<br>
+
+              9. Pembayaran selesai.<br><br>
+
+              Melalui Klik BCA<br>
+
+              1. Login pada aplikasi KlikBCA, masukkan user ID & PIN.<br>
+
+              2. Pilih “Transfer Dana“, kemudian pilih “Transfer ke BCA Virtual Account“.<br>
+
+              3. Masukkan no. BCA Virtual Account & klik “Lanjutkan“.<br>
+
+              4. Pastikan data yang dimasukkan sudah benar, dan Input “Respon KeyBCA“, lalu klik “Kirim“.<br>
+            </p>
+        </div>
+        <a href="#collapse4" data-toggle="collapse" role="button" aria-expanded="false" class="w-100 row text-dark collapse-button" aria-controls="collapse4">
+          <div class="col-11">Bagaimana cara melakukan pembayaran transfer Bank CIMB?</div>
+          <div class=" col-1">
+              <i class="material-icons collapse-icon float-right">keyboard_arrow_right</i>  
+              
+            </div> 
+             
+        </a>
+        <hr>
+        <div class="collapse multi-collapse" id="collapse4">
+            <p>
+              1. Klik “Internet Banking” pada kolom Pilih Metode Pembayaran di laman Pembayaran, lalu pilih “CIMB Clicks / Go Mobile“.<br>
+
+              2. Setelah klik “Bayar Sekarang“, kamu akan diarahkan ke halaman pembayaran.<br>
+
+              3. Pembayaran dapat dilakukan melalui CIMB Clicks (OTP) atau Go Mobile (QR Code)<br>
+
+              4. Apabila kamu memilih melakukan pembayaran melalui CIMB Clicks (OTP),<br>
+              Pastikan rekening sumber dana yang akan digunakan sudah tepat dan benar. Periksa nomor pesanan dan jumlah pembayaran lalu klik tombol “send SMS”.<br>
+              Melalui SMS ke nomor handphone kamu, CIMB Clicks akan mengirimkan kode OTP (One Time Password). Pastikan nomor handphone kamu sudah terdaftar di CIMB Clicks. Masukkan kode OTP tersebut pada kolom yang disediakan. Klik tombol “Pay“<br>
+              Transaksi berhasil.<br>
+              5. Apabila kamu memilih melakukan pembayaran melalui Go Mobile (QR Code)<br><br>
+
+              Login ke aplikasi Go Mobile kamu.<br>
+              Pilih menu “QR” lalu tekan “Scan”.<br>
+              Scan QR yang tertera di layar lalu konfirmasi pembelian kamu dengan Go Mobile PIN.<br>
+              Transaksi berhasil.<br>
+              Note :<br>
+              Nominal minimum pembayaran CIMB Clicks adalah Rp 10.000.
+            </p>
+        </div>
+        <a href="#collapse5" data-toggle="collapse" role="button" aria-expanded="false" class="w-100 row text-dark collapse-button" aria-controls="collapse5">
+          <div class="col-11">Bagaimana cara melakukan pembayaran transfer Bank BNI?</div>
+          <div class=" col-1">
+              <i class="material-icons collapse-icon float-right">keyboard_arrow_right</i>  
+              
+            </div> 
+             
+        </a>
+        <hr>
+        <div class="collapse multi-collapse" id="collapse5">
+            <p>
+              Melalui ATM<br>
+
+              1. Masukkan kartu ATM dan PIN BNI kamu<br>
+
+              2. Pada menu utama, pilih menu “Menu Lainnya” > “Transfer” > “Rekening Tabungan” > ke “Rekening BNI”<br>
+
+              3. Masukkan nomor Virtual Account<br>
+
+              4. Masukkan jumlah pembayaran sesuai tagihan<br>
+
+              5. Di halaman konfirmasi, pastikan data transaksi sudah benar kemudian pilih “Ya“<br><br>
+
+               Melalui Mobile Banking BNI<br>
+
+              1. Akses BNI Mobile Banking melalui handphone<br>
+
+              2. Masukkan User ID dan Password<br>
+
+              3. Pilih menu “Transfer“, lalu pilih “Antar Rekening BNI“, pilih “Input Rekening Baru”<br>
+
+              4. Masukkan nomor Virtual Account<br>
+
+              5. Di halaman konfirmasi, pastikan data transaksi sudah benar kemudian pilih “Ya“<br>
+
+              6. Masukkan password kamu<br><br>
+
+              Melalui Internet Banking BNI<br>
+
+              1. Masuk ke https://ibank.bni.co.id<br>
+
+              2. Masukkan User ID dan Password<br>
+
+              3. Pilih menu “Transfer“, lalu pilih “Tambah Rekening Favorit“. Jika menggunakan Desktop. tambah rekening pada menu “Transaksi” kemudian “Atur Rekening Tujuan” lalu pilih “Tambah Rekening Tujuan”<br>
+
+              4. Masukkan nomor Virtual Account<br>
+
+              5. Masukkan Kode Otentikasi dan Nomor Rekening berhasil ditambahkan<br>
+
+              6. Pilih menu “Transfer“, lalu pilih “Transfer Antar Rekening BNI“, pilih “Rekening Tujuan”<br>
+
+              7. Pilih Rekening Debit<br>
+
+              8. Masukkan jumlah pembayaran sesuai tagihan<br>
+
+              9. Masukkan Kode Otentikasi<br>
+            </p>
+        </div>
+        <a href="#collapse6" data-toggle="collapse" role="button" aria-expanded="false" class="w-100 row text-dark collapse-button" aria-controls="collapse6">
+          <div class="col-11">Bagaimana cara melakukan pembayaran transfer Indomaret?</div>
+          <div class=" col-1">
+              <i class="material-icons collapse-icon float-right">keyboard_arrow_right</i>  
+              
+            </div> 
+             
+        </a>
+        <hr>
+        <div class="collapse multi-collapse" id="collapse6">
+            <p>
+              1. Pilih metode pembayaran “Bayar di Gerai” kemudian “Indomaret” di laman Pembayaran.<br>
+
+              2. Kamu akan mendapatkan kode pembayaran Indomaret.<br>
+
+              3. Tunjukkan kode pembayaran tersebut kepada kasir.<br>
+
+              4. Pembayaranmu akan diproses, kemudian kasir akan menyerahkan bukti pembayaran kepada kamu.<br>
+
+              5. Kamu akan menerima email konfirmasi pembayaran berhasil dari Blibli.
+            </p>
+        </div>
+    </div>
+  </body>
+          <footer>
+            <div class="container pt-5 border-bottom">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mb-3 text-center">
+                  <img src="images/logo_block.png" alt="logo footer" width="100%">
+                </div>
+                <div class="col-md-9 col-sm-12">
+          
+                  <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Bantuan</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../sales/sales-performance-market-pipeline.html">Pembayaran</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/project-management/project-management.html">Pengiriman</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../workforce/workforce-organization-management-hr.html">Status Pemesanan</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../e-commerce/e-commerce.html"> Cara Berbelanja</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-4"><a href="../finance/finance-accounting-erp.html">Kerja Sama</a></li>
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Customer Care</h5>
+                    <ul class="list-group">
+                      <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#"><b>Buka 24 jam setiap hari</b></a>
+                      </li>
+                      <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#" target="_blank"><i class="fas fa-phone-alt mr-1"></i> 081517090386</a>
+                      </li>
+                      <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#" target="_blank"><i class="fas fa-envelope mr-1"></i> cs@atmabooks.co.id</a>
+                      </li>
+                    </ul>
+                  </ul>
+                  </div>
+          
+                  <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Pembayaran</h5>
+                    <div class="d-flex flex-wrap pr-2">
+                      <a href="#" style="margin: 2px;"><img src="images/bni.png" alt="bni" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/bri.png" alt="bri" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/cimb.png" alt="cimb" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/visa.png" alt="visa" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/bca.png" alt="bca" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/indomaret.png" alt="indomaret" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/mandiri.png" alt="mandiri" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                    </div>
+                  </div>
+          
+                  <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left pl-1">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Info Kami</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tentang</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i> Blog</a></li>
+                  </ul>
+                  </div>
+          
+                  <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Ikuti kami</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#"><i class="fab fa-twitter mr-1"></i> Twitter</a>       
+                    </li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-google-plus mr-1"></i> Google+</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-medium mr-1"></i> Medium</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-facebook mr-1"></i> Facebook</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-youtube mr-1"></i> YouTube</a>
+                    </li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="py-4 d-flex float-left mt-2">
+                <span style="font-size: 14px; font-weight: 300;">Dibuat dengan <i class="fas fa-heart"></i> & <i class="fas fa-coffee"></i> di Jogjakarta, oleh Jo Vianto, Aldi, Hendry, Iche</span>
+              </div>
+            </div>
+            <div class="col-md-6 float-left">
+              <div class="py-4 d-flex float-right  mt-2">
+                <p style="font-size: 14px; font-weight: 300; " class="mr-4 text-gray">&copy; Atma BookStore</p>  
+                <a class="mr-4 text-white" href="../privacy.html">Privasi <i class="fas fa-plus"></i> Kebijakan</a>
+                <a class="text-white" href="../sitemap.xml">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="bootstrap-4.3.1-dist/js/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="owl/dist/owl.carousel.min.js"></script>
+    <script src="fontawesome-free-5.11.2-web/js/all.js"></script>
+    <script src="controller/main.js"></script>
+  </footer>
+</html>

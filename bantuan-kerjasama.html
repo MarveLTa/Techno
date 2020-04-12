@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/font-icon.css" />
+    <link rel="stylesheet" href="owl/dist/assets/owl.carousel.min.css" />
+    <link href="fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary sticky-top" style="z-index: 8888;">
+      <div class="container">
+        <a class="navbar-brand" href=".">
+          <img src="images/logo_inline.png" height="30" alt="logo">
+        </a>
+        <form class="form-inline" style="width: 60%;" onsubmit="return searcha()">
+          <div class="input-group w-75 float-right" style="margin-left: auto;">
+            <div class="input-group-prepend ">
+              <i class="material-icons input-group-text bg-white">search</i>
+            </div>
+            <input
+              id="search"
+              class="form-control mr-4"
+              type="search"
+              placeholder="Cari"
+              aria-label="Search"
+            />
+          </div>
+        </form>
+        
+         <!-- Dropdown -->
+        <div class="dropdown ">
+          <a
+          id="account_action"
+          class="nav-item nav-link active self align-middle text-white dropdown-toggle  d-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          href="./profile.html"
+          ><i class="fas fa-user mr-2"></i>Hi, <span id="account_name" style="max-width: 100px;">Jo Vianto</span> <i class="fas fa-chevron-down ml-1"></i></a
+          >
+          <div class="dropdown-menu  dropdown-menu-right" id="account_menu" aria-labelledby="account_action" style="margin-top: -1px;">
+            <a class="dropdown-item" href="profil.html?show=v-pills-home"><i class="fas fa-user mr-3"></i>Akun</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-books"><i class="fas fa-book mr-3"></i>Buku Kamu</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-wishlist"><i class="fas fa-heart mr-3"></i><span class="mr-5">Buku Impian</span> <span class="badge badge-pill badge-primary px-2 mr-2"><b  class="wishList_number">0</b></span></a>
+            <a class="dropdown-item" href="#" onclick="logout();"><i class="fas fa-door-open mr-3"></i>Keluar</a>
+          </div>
+        </div>
+        
+        <a
+          id="login_action"
+          class=" nav-item nav-link active self align-middle text-white border rounded"
+          href="./login.html"
+          ><b>Masuk</b></a
+        >
+        <a class=" btn d-inline nav-item nav-link align-middle" style="position: relative;" href="keranjang.html">
+          <i class="material-icons text-white align-middle">
+            shopping_cart
+          </i>
+          <span class="badge badge-danger d-none" id="cart_number" style="position: absolute; top: 6px; right: 6px;">0</span>
+        </a>
+      </div>
+    </nav>
+    <div class="container my-5 text-muted px-5 pb-4" style="border-left-style: solid; border-right-style: solid; border-color: rgb(209, 209, 209); border-left-width: 1px; border-right-width: 1px; ">
+        <div class="col">
+          <div class="row text-dark">Panduan Cara Bekerjasama
+          </div>
+          <div class="row" style="font-size: 13px;">
+              
+          </div>
+        </div>
+        <hr >
+        <p>
+          
+        </p>
+        <a href="#collapse1" data-toggle="collapse" role="button" aria-expanded="false" class="w-100 row text-dark collapse-button" aria-controls="collapse1">
+          <div class="col-11">
+              Cara bekerjasama</div>
+          <div class=" col-1">
+              <i class="material-icons collapse-icon float-right">keyboard_arrow_right</i>  
+              
+            </div> 
+             
+        </a>
+        <hr>
+        <div class="collapse multi-collapse" id="collapse1">
+            <p>
+                1. Hubungi coop@atmabooks.co.id<br>
+                2. Sampaikan hal-hal yang ingin ditawarkan.<br>
+                3. Tunggu kami selesai memproses email Anda.<br>
+                4. MoU dilakukan setelah semuanya sepakat dan dilakukan di tempat yang telah ditentukan.<br>
+            </p>
+        </div>
+    </div>
+  </body>
+          <footer>
+            <div class="container pt-5 border-bottom">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mb-3 text-center">
+                  <img src="images/logo_block.png" alt="logo footer" width="100%">
+                </div>
+                <div class="col-md-9 col-sm-12">
+          
+                  <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Bantuan</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../sales/sales-performance-market-pipeline.html">Pembayaran</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/project-management/project-management.html">Pengiriman</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../workforce/workforce-organization-management-hr.html">Status Pemesanan</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../e-commerce/e-commerce.html"> Cara Berbelanja</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-4"><a href="../finance/finance-accounting-erp.html">Kerja Sama</a></li>
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Customer Care</h5>
+                    <ul class="list-group">
+                      <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#"><b>Buka 24 jam setiap hari</b></a>
+                      </li>
+                      <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#" target="_blank"><i class="fas fa-phone-alt mr-1"></i> 081517090386</a>
+                      </li>
+                      <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#" target="_blank"><i class="fas fa-envelope mr-1"></i> cs@atmabooks.co.id</a>
+                      </li>
+                    </ul>
+                  </ul>
+                  </div>
+          
+                  <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Pembayaran</h5>
+                    <div class="d-flex flex-wrap pr-2">
+                      <a href="#" style="margin: 2px;"><img src="images/bni.png" alt="bni" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/bri.png" alt="bri" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/cimb.png" alt="cimb" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/visa.png" alt="visa" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/bca.png" alt="bca" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/indomaret.png" alt="indomaret" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/mandiri.png" alt="mandiri" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                    </div>
+                  </div>
+          
+                  <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left pl-1">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Info Kami</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tentang</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i> Blog</a></li>
+                  </ul>
+                  </div>
+          
+                  <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Ikuti kami</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#"><i class="fab fa-twitter mr-1"></i> Twitter</a>       
+                    </li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-google-plus mr-1"></i> Google+</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-medium mr-1"></i> Medium</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-facebook mr-1"></i> Facebook</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-youtube mr-1"></i> YouTube</a>
+                    </li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="py-4 d-flex float-left mt-2">
+                <span style="font-size: 14px; font-weight: 300;">Dibuat dengan <i class="fas fa-heart"></i> & <i class="fas fa-coffee"></i> di Jogjakarta, oleh Jo Vianto, Aldi, Hendry, Iche</span>
+              </div>
+            </div>
+            <div class="col-md-6 float-left">
+              <div class="py-4 d-flex float-right  mt-2">
+                <p style="font-size: 14px; font-weight: 300; " class="mr-4 text-gray">&copy; Atma BookStore</p>  
+                <a class="mr-4 text-white" href="../privacy.html">Privasi <i class="fas fa-plus"></i> Kebijakan</a>
+                <a class="text-white" href="../sitemap.xml">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="bootstrap-4.3.1-dist/js/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="owl/dist/owl.carousel.min.js"></script>
+    <script src="fontawesome-free-5.11.2-web/js/all.js"></script>
+    <script src="controller/main.js"></script>
+  </footer>
+</html>

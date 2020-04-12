@@ -1,0 +1,290 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900");
+body {
+  font-family: "Roboto", sans-serif;
+}
+.carousel-indicators li {
+  border-radius: 50% !important;
+  width: 12px;
+  height: 12px;
+}
+.carousel-indicators li.active {
+  background-color: var(--blue);
+}
+.prev-corousel {
+  background-color: white;
+  border-radius: 50%;
+}
+.carousel-item {
+  height: 350px !important;
+}
+.carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  min-height: 100%;
+}
+
+.promo-cell {
+  height: 350px !important;
+}
+.promo-cell img {
+  object-fit: cover;
+  width: 100%;
+  min-height: 100%;
+}
+
+.flash-sale-container {
+  background: url("images/flash_sale_repeat.jpg") repeat-x scroll 0% 0%;
+}
+.flash-sale {
+  background: url("images/flash_sale_bg.jpg") no-repeat scroll 8% top;
+}
+
+.katalog-judul {
+  font-size: 14px;
+  font-weight: 600;
+}
+.katalog-pengarang {
+  font-size: 12px;
+  color: var(--gray);
+}
+.katalog-harga {
+  font-weight: 700;
+  color: var(--orange);
+}
+.katalog-diskon {
+  font-size: 12px;
+  color: var(--gray);
+}
+.flash-sale-carousel .image-container {
+  overflow: hidden;
+  height: 238px;
+}
+.image-container {
+  overflow: hidden;
+  height: 238px;
+}
+.image-container img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+}
+.flash-sale-carousel .item img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+}
+
+.caraousel-container {
+  position: relative;
+}
+.caraousel-nav {
+  position: absolute;
+  box-sizing: inherit;
+  height: 100% !important;
+  width: 100%;
+}
+.caraousel-nav .nav-button.nav-left {
+  position: absolute;
+  background: white;
+  z-index: 80;
+  border-style: none;
+  width: 50px;
+  height: 50px;
+  top: calc(50% - 25px);
+  left: -25px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 50%;
+  animation: nav-button-fade-out;
+  animation-duration: 1s;
+}
+.caraousel-nav .nav-button.nav-right {
+  position: absolute;
+  background: white;
+  z-index: 80;
+  border-style: none;
+  width: 50px;
+  height: 50px;
+  top: calc(50% - 25px);
+  right: -25px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 50%;
+  animation: nav-button-fade-out;
+  animation-duration: 1s;
+}
+@keyframes nav-button-fade-in {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes nav-button-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+.caraousel-nav .nav-button.nav-left:hover {
+  opacity: 100%;
+  animation: nav-button-fade-in;
+  animation-duration: 1s;
+}
+.caraousel-nav .nav-button.nav-right:hover {
+  opacity: 100%;
+  animation: nav-button-fade-in;
+  animation-duration: 1s;
+}
+.rounded {
+  border-radius: 10px !important;
+}
+
+footer {
+  background: #ebf4fa;
+}
+
+.footer-bottom {
+  color: white;
+  background: #5f6a74;
+}
+
+.dropdown-toggle,
+.dropdown-menu {
+  border-radius: 8px !important;
+}
+.dropdown-menu {
+  animation: nav-account-fade-out !important;
+  animation-duration: 0.5s;
+  background-color: var(--light);
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-item {
+  padding-block: 12px;
+  color: #535e66 !important;
+}
+
+.dropdown-item:hover {
+  color: white;
+  background-color: #e7e9eb;
+}
+.btn-danger {
+  width: 55%;
+}
+@keyframes nav-account-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes nav-account-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  animation: nav-account-fade-in;
+  animation-duration: 0.5s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.detail-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 350px;
+}
+
+.detail-column-name {
+  font-size: 13px;
+}
+.detail-column-name * {
+  vertical-align: middle;
+}
+
+.text-orange {
+  color: var(--orange);
+}
+/* Style all font awesome icons */
+a.sosmed .svg-inline--fa {
+  padding: 7px !important;
+  font-size: 30px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.sosmed {
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+/* Add a hover effect if you want */
+a .svg-inline--fa:hover {
+  opacity: 0.7 !important;
+}
+
+.sosmed > .fa-facebook-f {
+  background: #3b5998;
+  color: white;
+}
+
+.sosmed .fa-twitter {
+  background: #55acee;
+  color: white;
+}
+.sosmed .fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.sosmed .fa-linkedin-in {
+  background: #007bb5;
+  color: white;
+}
+
+.detail-nav.active {
+  color: var(--primary) !important;
+}
+.checked {
+  color: orange;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#toast-container {
+  position: sticky;
+  z-index: 1055;
+  top: 60px !important;
+}
+#toast-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px;
+}
+#toast-container > #toast-wrapper > .toast {
+  min-width: 150px;
+}
+#toast-container > #toast-wrapper > .toast > .toast-header strong {
+  padding-right: 20px;
+}

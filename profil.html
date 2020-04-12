@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/font-icon.css" />
+  <link rel="stylesheet" href="owl/dist/assets/owl.carousel.min.css" />
+  <link href="fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    .personal .nav-link.active{
+      background: transparent !important;
+      color: var(--primary) !important;
+      border-left: 4px !important;
+      border-left-color: var(--primary) !important;
+      border-left-style: solid !important;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    .personal .nav-link{
+      border-bottom: 1px;
+      border-radius: 0%;
+      border-bottom-style: solid;
+      border-bottom-color: rgb(184, 184, 184);
+    }
+  </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary sticky-top" style="z-index: 8888;">
+        <div class="container">
+          <a class="navbar-brand" href=".">
+            <img src="images/logo_inline.png" height="30" alt="logo">
+          </a>
+          <form class="form-inline" style="width: 60%;" onsubmit="return searcha()">
+            <div class="input-group w-75 float-right" style="margin-left: auto;">
+              <div class="input-group-prepend ">
+                <i class="material-icons input-group-text bg-white">search</i>
+              </div>
+              <input
+                id="search"
+                class="form-control mr-4"
+                type="search"
+                placeholder="Cari"
+                aria-label="Search"
+              />
+            </div>
+          </form>
+          
+           <!-- Dropdown -->
+          <div class="dropdown ">
+            <a
+            id="account_action"
+            class="nav-item nav-link active self align-middle text-white dropdown-toggle  d-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            href="./profile.html"
+            ><i class="fas fa-user mr-2"></i>Hi, <span id="account_name" style="max-width: 100px;">Jo Vianto</span> <i class="fas fa-chevron-down ml-1"></i></a
+            >
+            <div class="dropdown-menu  dropdown-menu-right" id="account_menu" aria-labelledby="account_action" style="margin-top: -1px;">
+              <a class="dropdown-item" href="profil.html?show=v-pills-home"><i class="fas fa-user mr-3"></i>Akun</a>
+              <a class="dropdown-item" href="profil.html?show=v-pills-books"><i class="fas fa-book mr-3"></i>Buku Kamu</a>
+              <a class="dropdown-item" href="profil.html?show=v-pills-wishlist"><i class="fas fa-heart mr-3"></i><span class="mr-5">Buku Impian</span> <span class="badge badge-pill badge-primary px-2 mr-2"><b  class="wishList_number">0</b></span></a>
+              <a class="dropdown-item" href="#" onclick="logout();"><i class="fas fa-door-open mr-3"></i>Keluar</a>
+            </div>
+          </div>
+          
+          <a
+            id="login_action"
+            class=" nav-item nav-link active self align-middle text-white border rounded"
+            href="./login.html"
+            ><b>Masuk</b></a
+          >
+          <a class=" btn d-inline nav-item nav-link align-middle" style="position: relative;" href="keranjang.html">
+            <i class="material-icons text-white align-middle">
+              shopping_cart
+            </i>
+            <span class="badge badge-danger d-none" id="cart_number" style="position: absolute; top: 6px; right: 6px;">0</span>
+          </a>
+        </div>
+      </nav>
+  <div class="container">
+    <div class="row pb-4" style="margin-top: -30px;">
+      <div class="col-3">
+        
+        <div class="row sticky-top" style="padding-top: 60px;">
+            <div class="nav flex-column nav-pills personal sticky-top" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
+                <div class="ml-4 image-fluid overflow-hidden rounded border mx-auto" style="height: 150px; width: 150px;">
+                    <img style="z-index: 4;" class="img-fluid" src="https://instagram.fjog3-1.fna.fbcdn.net/vp/566d70d17c316003f326f9493cbcbda6/5E7C6CF8/t51.2885-19/s150x150/73239630_468031774064861_2987087825234558976_n.jpg?_nc_ht=instagram.fjog3-1.fna.fbcdn.net&_nc_cat=105" alt="pp">
+                </div>
+                <div>
+                  <h6 class="mb-4 mt-5" style="font-size: 18px;">sjovianto@gmail.com</h6>
+                </div>
+                <div>
+                  <h5 class="text-muted"><i class="fas fa-medal mr-2" style="color: #FFD700"></i>Gold Member</h5>
+                </div>
+                <div>
+                  <h6 class="text-muted" style="font-size: 13px;">Member Sejak 24 Juli 2019</h6>
+                </div>
+                <a style="z-index: 0;" class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                  aria-controls="v-pills-home" aria-selected="true">Profil</a>
+                <a class="nav-link" id="v-pills-books-tab" data-toggle="pill" href="#v-pills-books" role="tab"
+                  aria-controls="v-pills-books" aria-selected="false">Buku Kamu</a>
+                <a class="nav-link" id="v-pills-wishlist-tab" data-toggle="pill" href="#v-pills-wishlist" role="tab"
+                  aria-controls="v-pills-wishlist" aria-selected="false">Buku Impian <span class="badge badge-pill badge-primary px-2 ml-5"><b  class="wishList_number2">0</b></span></a>
+                  <a class="nav-link" id="v-pills-change-pw-tab" data-toggle="pill" href="#v-pills-change-pw" role="tab"
+                    aria-controls="v-pills-change-pw" aria-selected="false">Ubah Password</a>
+              </div>
+        </div>
+        
+      </div>
+      <div class="col-9">
+        <div class="tab-content" id="v-pills-tabContent"style="padding-top: 60px;">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" >
+            <h4 class="mb-4">Profil</h4>
+            <hr class="w-75 float-left mt-1">
+            <form class="w-75" id="updateProfile" onsubmit="return updateProfile()">
+              <div class="form-group">
+                <label for="username" style="font-size: 13px; font-weight: bold;">Nama Lengkap <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Nama Lengkap" required>
+              </div>
+              <div class="form-group">
+                <label for="email" style="font-size: 13px; font-weight: bold;">Email Login <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="email" placeholder="Email" disabled>
+                <small id="emailHelp" class="form-text text-muted">Kami tidak akan membagikan email Anda dengan siapapun.</small>
+              </div>
+              <label for="exampleInputPassword1" style="font-size: 13px; font-weight: bold;">Jenis Kelamin <span class="text-danger">*</span></label>
+              <div class="form-group form-check pl-1">
+                <div class="col-3 d-inline">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="pria" value="Pria" checked>
+                    <label class="form-check-label" for="pria">Pria</label>
+                </div>
+                <div class="col-3 d-inline">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="wanita" value="Wanita" >
+                    <label class="form-check-label" for="wanita">Wanita</label>
+                </div>
+              </div>
+              <div class="form-group">
+                  <label for="telp" style="font-size: 13px; font-weight: bold;">No Handphone <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="telp" aria-describedby="emailHelp" placeholder="No Handphone" required>
+                </div>
+              <div class="form-group">
+                  <label for="tgl_lahir" style="font-size: 13px; font-weight: bold;">Tanggal Lahir <span class="text-danger">*</span></label>
+                  <input id="tgl_lahir" type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control" value="07/24/1999" required>
+              </div>
+              <small id="emailHelp" class="form-text text-muted"><span class="text-danger mr-2">*</span>Wajib diisi</small>
+              <div class="form-check mt-4">
+                  <input class="form-check-input"  type="checkbox" value="" id="mailbox">
+                  <label class="form-check-label" for="mailbox" data-toggle="tooltip" title="Anda akan dikirimkan kabar terbaru mengenai promo, buku baru, dan lainnya melalui E-mail Anda.">
+                    <small style="text-decoration:underline;">Kabari saya melalui E-mail. <i class="fas fa-question-rounded"></i></small>
+                  </label>
+                </div>
+              <button type="submit" class="btn btn-primary mt-2" style="width: 150px;" >Simpan</button>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="v-pills-books" role="tabpanel" aria-labelledby="v-pills-books-tab">
+            <h4>Buku Kamu</h4>
+            <hr class="mt-1">
+            <div class="emptybooks mx-auto pb-5 mb-2 d-none" style="max-width: 300px;">
+              <div><img class="mx-auto d-block fas fa-book text-muted p-5" style="width: 200px; height: 200px; opacity: .5;"></div>
+              <p class="text-center text-muted">
+                <b>Wah, Kamu masih belum ada buku</b> <br> Daripada kosong melempem, mending isi dengan buku-buku impianmu. Yuk, cek sekarang!
+              </p>
+              <a class="btn btn-primary mx-auto d-block" href=".">Beli Buku Sekarang</a>
+            </div>
+            <div class="d-flex flex-row books-container flex-wrap">
+              <!-- <div class="shadow rounded overflow-hidden bg-white">
+                <div class="image-container">
+                  <img
+                    src="https://cdn.gramedia.com/uploads/items/Syekh_Abdul_Qadir_Jailani_Karamah__Nasihat__w200_hauto.jpg"
+                    alt="Tuner Image"
+                  />
+                </div>
+                <div class="p-2 pb-3">
+                  <div class="text-truncate katalog-judul">
+                    Judulaaaaaaaaaasssssss
+                  </div>
+                  <div class=" katalog-pengarang">Pengarang</div>
+                  <div class=" katalog-harga mt-1">Harga</div>
+                  <div class=" katalog-diskon">Diskon <span class="badge badge-danger">Danger</span></div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="tab-pane fade" id="v-pills-wishlist" role="tabpanel" aria-labelledby="v-pills-wishlist-tab">
+              <h4>Buku Impian <button id="delete-all-btn" class="btn btn-link" style="text-decoration:none" onclick="$('#modalHapusSemua').modal('show')"><i class="fas fa-trash mr-2"></i><small>Hapus Semua</small></button></h4>
+              <hr class=" mt-1 d-block">
+              <div class="emptywishlist d-none mx-auto pb-5 mb-2 fade show" style="max-width: 300px;">
+                <div><img class="mx-auto d-block" src="images/emptywishlist.png" alt="kosong" style="max-width: 250px;"></div>
+                <p class="text-center text-muted">
+                  <b>Wah, buku impianmu belum ada</b> <br> Daripada dianggurin, mending isi dengan buku-buku impianmu. Yuk, cek sekarang!
+                </p>
+                <a class="btn btn-primary mx-auto d-block" href=".">Beli Buku Sekarang</a>
+              </div>
+              <div class="d-flex flex-row wishlist-container flex-wrap">
+              </div>
+          </div>
+          <div class="tab-pane fade" id="v-pills-change-pw" role="tabpanel" aria-labelledby="v-pills-change-pw-tab">
+            <h4>Ganti Password</h4>
+            <hr class="w-75 float-left mt-1">
+            <form class="w-75" id="updateProfile" onsubmit="return updatePassword()">
+              <div class="form-group">
+                <label for="username" style="font-size: 13px; font-weight: bold;">Password Lama <span class="text-danger">*</span> <span id="error_passLama" class="text-danger mr-2 d-none"><br> Password tidak sesuai</span></label>
+                <input type="password" class="form-control" id="password_change" aria-describedby="emailHelp" placeholder="Password Lama" required>
+              </div>
+              <div class="form-group">
+                <label for="username" style="font-size: 13px; font-weight: bold;">Password Baru <span class="text-danger">*</span></label>
+                <input type="password" class="form-control" id="password_baru_change" aria-describedby="emailHelp" placeholder="Password Baru" required>
+              </div>
+              <div class="form-group">
+                <label for="username" style="font-size: 13px; font-weight: bold;">Ulangi Password Baru <span class="text-danger">*</span> <span id="error_passBaru" class="text-danger mr-2 d-none"><br> Konfirmasi password tidak sesuai</span></label>
+                <input type="password" class="form-control" id="re_password_baru_change" aria-describedby="emailHelp" placeholder="Ulangi Password Baru" required>
+              </div>
+              <small id="emailHelp" class="form-text text-muted"><span class="text-danger mr-2">*</span>Wajib diisi</small>
+              <button type="submit" class="btn btn-primary mt-2" style="width: 150px;" >Simpan</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="deleteCartModal" tabindex="-1" role="dialog" aria-labelledby="deleteCartModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Apakah Anda yakin ingin menghapus</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4">
+                  <div class="ml-2 mr-2 image-container" style="max-height: 100px;">
+                    <img id="modal_detail_pic" class="mx-auto" alt="pp" style="display: block;">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="row">
+                    <p style="font-size: 16px; max-lines: 2; text-overflow:clip; overflow: hidden;"
+                      class="mb-1 text-uppercase" id="modal_detail_judul"> </p>
+                  </div>
+                  <div class="row">
+                    <div class="text-muted" id="modal_detail_genre" style="font-size: 14px;">Genre</div>
+                  </div>
+                  <div class="row">
+                    <div class="text-orange"><b id="modal_detail_harga">Harga</b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 120px;">Kembali</button>
+          <button id="delete-action" type="button" data-dismiss="modal" class="btn btn-primary"
+            style="width: 120px;">Yakin</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade show" id="modalGantiPassword" tabindex="-1" role="dialog" aria-labelledby="modalGantiPasswordFail" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Ganti Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-auto">
+          <div class="fas fa-check-circle mx-auto d-block" style="color:rgb(65, 131, 78); opacity: .5;height: 64px; width: 64px;"></div>
+          <div class="mt-2 text-muted">Password Berhasil Diganti</div>
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade show" id="modalHapusSemua" tabindex="-1" role="dialog" aria-labelledby="modalHapusSemua" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Hapus Semua Buku Impian</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-auto">
+          <div class="fas fa-exclamation-circle mx-auto d-block" style="color:rgba(204, 195, 62, 0.63); opacity: .5;height: 64px; width: 64px;"></div>
+          <div class="mt-2 text-muted">Apakah kamu yakin ingin menghapus semua buku impian?</div>
+        </div>
+        <div class="modal-footer text-center">
+            <div class="col-6 px-3"><button type="button" class="btn btn-danger mx-auto w-100" data-dismiss="modal" onclick="deleteAllWishList()">Yakin</button></div>
+            <div class="col-6 px-3"><button type="button" class="btn btn-primary mx-auto w-100" data-dismiss="modal">Batal</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade show" id="modalGantiPasswordFail" tabindex="-1" role="dialog" aria-labelledby="modalGantiPassword" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Ganti Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-auto">
+          <div class="fas fa-times-circle mx-auto d-block" style="color:rgba(175, 37, 37, 0.568); opacity: .5;height: 64px; width: 64px;"></div>
+          <div class="mt-2 text-muted">Ganti Password Gagal</div>
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="account-modal-backdrop" class="modal-backdrop fade" aria-labelledby="account_action" style="z-index: -1;"></div>
+</body>
+<footer>
+  <div class="container pt-5 border-bottom">
+    <div class="row">
+      <div class="col-md-3 col-sm-12 mb-3 text-center">
+        <img src="images/logo_block.png" alt="logo footer" width="100%">
+      </div>
+      <div class="col-md-9 col-sm-12">
+
+        <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Bantuan</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="bantuan-pembayaran.html">Pembayaran</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="/project-management/project-management.html">Pengiriman</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="../workforce/workforce-organization-management-hr.html">Status Pemesanan</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../e-commerce/e-commerce.html"> Cara
+                Berbelanja</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-4"><a
+                href="../finance/finance-accounting-erp.html">Kerja Sama</a></li>
+            <h5 class="mb-4 font-weight-bold text-uppercase">Customer Care</h5>
+            <ul class="list-group">
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#"><b>Buka 24 jam setiap hari</b></a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#" target="_blank"><i class="fas fa-phone-alt mr-1"></i> 081517090386</a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#" target="_blank"><i class="fas fa-envelope mr-1"></i> cs@atmabooks.co.id</a>
+              </li>
+            </ul>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Pembayaran</h5>
+          <div class="d-flex flex-wrap pr-2">
+            <a href="#" style="margin: 2px;"><img src="images/bni.png" alt="bni" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/bri.png" alt="bri" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/cimb.png" alt="cimb" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/visa.png" alt="visa" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/bca.png" alt="bca" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/indomaret.png" alt="indomaret"
+                class="border border-secondary mb-2" style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/mandiri.png" alt="mandiri"
+                class="border border-secondary mb-2" style="border-radius: 5px"></a>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left pl-1">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Info Kami</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tentang</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i> Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Ikuti kami</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#"><i class="fab fa-twitter mr-1"></i> Twitter</a>
+            </li class="list-group-item bg-transparent border-0 p-0 mb-2">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-google-plus mr-1"></i> Google+</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-medium mr-1"></i> Medium</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-facebook mr-1"></i> Facebook</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-youtube mr-1"></i> YouTube</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+<div class="footer-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="py-4 d-flex float-left mt-2">
+          <span style="font-size: 14px; font-weight: 300;">Dibuat dengan <i class="fas fa-heart"></i> & <i
+              class="fas fa-coffee"></i> di Jogjakarta, oleh Jo Vianto, Aldi, Hendry, Iche</span>
+        </div>
+      </div>
+      <div class="col-md-6 float-left">
+        <div class="py-4 d-flex float-right  mt-2">
+          <p style="font-size: 14px; font-weight: 300; " class="mr-4 text-gray">&copy; Atma BookStore</p>
+          <a class="mr-4 text-white" href="../privacy.html">Privasi <i class="fas fa-plus"></i> Kebijakan</a>
+          <a class="text-white" href="../sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="bootstrap-4.3.1-dist/js/jquery-3.4.1.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script src="owl/dist/owl.carousel.min.js"></script>
+<script src="fontawesome-free-5.11.2-web/js/all.js"></script>
+<script src="controller/main.js"></script>
+<script src="dist/jquery-ui.min.js"></script>
+<script src="dist/jquery.validate.min.js"></script>
+<script src="dist/additional-methods.min.js"></script>
+<script src="controller/profil.js"></script>
+<script>
+ mustLogin()
+</script>
+</footer>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/font-icon.css" />
+  <link rel="stylesheet" href="owl/dist/assets/owl.carousel.min.css" />
+  <link href="fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary sticky-top" style="z-index: 8888;">
+        <div class="container">
+          <a class="navbar-brand" href=".">
+            <img src="images/logo_inline.png" height="30" alt="logo">
+          </a>
+          <form class="form-inline" style="width: 60%;" onsubmit="return searcha()">
+            <div class="input-group w-75 float-right" style="margin-left: auto;">
+              <div class="input-group-prepend ">
+                <i class="material-icons input-group-text bg-white">search</i>
+              </div>
+              <input
+                id="search"
+                class="form-control mr-4"
+                type="search"
+                placeholder="Cari"
+                aria-label="Search"
+              />
+            </div>
+          </form>
+          
+           <!-- Dropdown -->
+          <div class="dropdown ">
+            <a
+            id="account_action"
+            class="nav-item nav-link active self align-middle text-white dropdown-toggle  d-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            href="./profile.html"
+            ><i class="fas fa-user mr-2"></i>Hi, <span id="account_name" style="max-width: 100px;">Jo Vianto</span> <i class="fas fa-chevron-down ml-1"></i></a
+            >
+            <div class="dropdown-menu  dropdown-menu-right" id="account_menu" aria-labelledby="account_action" style="margin-top: -1px;">
+              <a class="dropdown-item" href="profil.html?show=v-pills-home"><i class="fas fa-user mr-3"></i>Akun</a>
+              <a class="dropdown-item" href="profil.html?show=v-pills-books"><i class="fas fa-book mr-3"></i>Buku Kamu</a>
+              <a class="dropdown-item" href="profil.html?show=v-pills-wishlist"><i class="fas fa-heart mr-3"></i><span class="mr-5">Buku Impian</span> <span class="badge badge-pill badge-primary px-2 mr-2"><b  class="wishList_number">0</b></span></a>
+              <a class="dropdown-item" href="#" onclick="logout();"><i class="fas fa-door-open mr-3"></i>Keluar</a>
+            </div>
+          </div>
+          
+          <a
+            id="login_action"
+            class=" nav-item nav-link active self align-middle text-white border rounded"
+            href="./login.html"
+            ><b>Masuk</b></a
+          >
+          <a class=" btn d-inline nav-item nav-link align-middle" style="position: relative;" href="keranjang.html">
+            <i class="material-icons text-white align-middle">
+              shopping_cart
+            </i>
+            <span class="badge badge-danger d-none" id="cart_number" style="position: absolute; top: 6px; right: 6px;">0</span>
+          </a>
+        </div>
+      </nav>
+  <div class="container">
+    <div class="row pb-5 mb-2 " id="kontainer-pembayaran">
+      <div class="col-8 pt-2">
+        <nav class="navbar navbar-dark" style="z-index: 8888;">
+          <div class="container">
+            <a class="navbar-brand" href=".">
+              <img src="" height="30" alt="">
+            </a>
+          </div>
+        </nav>
+        <div class="card shadow" id="keranjang">
+
+          <div class="card-header">Pilih Metode Pembayaran</div>
+
+          <div class="card-body d-flex flex-column pl-4">
+            
+            <div class="metode-pembayaran">
+                <h6 class="mb-3 mt-2"><b>Transfer Bank</b></h6>
+                <div class="pl-3" style="font-size: 14px;">
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="bni-tf" value="bni-tf"
+                      style="position: relative;" checked>
+                    <label class="form-check-label" for="bni-tf">
+    
+                      <img src="images/bni.png" alt="bni" class="border border-secondary ml-1 mr-2 align-middle"
+                        style="border-radius: 5px">
+                      <span>Transfer Bank BNI</span>
+                    </label>
+                  </div>
+                  <div class="form-check mt-2">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="bri-tf" value="bri-tf"
+                        style="position: relative;">
+                      <label class="form-check-label" for="bri-tf">
+      
+                        <img src="images/bri.png" alt="bri" class="border border-secondary ml-1 mr-2 align-middle"
+                          style="border-radius: 5px">
+                        <span>Transfer Bank BRI</span>
+                      </label>
+                    </div>
+                    <div class="form-check mt-2">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="bca-tf" value="bca-tf"
+                        style="position: relative;">
+                      <label class="form-check-label" for="bca-tf">
+      
+                        <img src="images/bca.png" alt="bri" class="border border-secondary ml-1 mr-2 align-middle"
+                          style="border-radius: 5px">
+                        <span>Transfer Bank BCA</span>
+                      </label>
+                    </div>
+                    <div class="form-check mt-2">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="cimb-tf" value="cimb-tf"
+                        style="position: relative;">
+                      <label class="form-check-label" for="cimb-tf">
+      
+                        <img src="images/cimb.png" alt="bri" class="border border-secondary ml-1 mr-2 align-middle"
+                          style="border-radius: 5px">
+                        <span>Transfer Bank CIMB</span>
+                      </label>
+                    </div>
+                    <div class="form-check mt-2">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="mandiri-tf" value="mandiri-tf"
+                        style="position: relative;">
+                      <label class="form-check-label" for="mandiri-tf">
+      
+                        <img src="images/mandiri.png" alt="bri" class="border border-secondary ml-1 mr-2 align-middle"
+                          style="border-radius: 5px">
+                        <span>Transfer Bank Mandiri</span>
+                      </label>
+                    </div>
+                </div>
+            </div>
+            <div class="metode-pembayaran">
+                <h6 class="mb-3 mt-4"><b>Transfer melalui Virtual Account</b></h6>
+                <div class="pl-3" style="font-size: 14px;">
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="bni-va" value="bni-va"
+                      style="position: relative;">
+                    <label class="form-check-label" for="bni-va">
+    
+                      <img src="images/bni.png" alt="bni" class="border border-secondary ml-1 mr-2 align-middle"
+                        style="border-radius: 5px">
+                      <span>Virtual Account BNI</span>
+                    </label>
+                  </div>
+                  <div class="form-check mt-2">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="bri-va" value="bri-va"
+                        style="position: relative;">
+                      <label class="form-check-label" for="bri-va">
+      
+                        <img src="images/bri.png" alt="bri" class="border border-secondary ml-1 mr-2 align-middle"
+                          style="border-radius: 5px">
+                        <span>Virtual Account BRI</span>
+                      </label>
+                    </div>
+                    <div class="form-check mt-2">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="bca-va" value="bca-va"
+                        style="position: relative;">
+                      <label class="form-check-label" for="bca-va">
+      
+                        <img src="images/bca.png" alt="bri" class="border border-secondary ml-1 mr-2 align-middle"
+                          style="border-radius: 5px">
+                        <span>Virtual Account BCA</span>
+                      </label>
+                    </div>
+                </div>
+            </div>
+            <div class="metode-pembayaran">
+              <h6 class="mb-3 mt-4"><b>Kartu Kredit</b></h6>
+              <div class="pl-3" style="font-size: 14px;">
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="visa-va" value="visa-va"
+                      style="position: relative;">
+                    <label class="form-check-label" for="visa-va">
+    
+                      <img src="images/visa.png" alt="bri" class="border border-secondary ml-1 mr-2 align-middle"
+                        style="border-radius: 5px">
+                      <span>Kartu Kredit VISA</span>
+                    </label>
+                  </div>
+              </div>
+          </div>
+            <div class="metode-pembayaran">
+                <h6 class="mb-3 mt-4"><b>Bayar di Gerai</b></h6>
+                <div class="pl-3" style="font-size: 14px;">
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="indomaret" value="indomaret"
+                      style="position: relative;">
+                    <label class="form-check-label" for="indomaret">
+    
+                      <img src="images/indomaret.png" alt="bni" class="border border-secondary ml-1 mr-2 align-middle"
+                        style="border-radius: 5px">
+                      <span>Indomaret</span>
+                    </label>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="sticky-top pt-2">
+          <nav class="navbar navbar-dark" style="z-index: 8888;">
+            <div class="container">
+              <a class="navbar-brand" href=".">
+                <img src="" height="30" alt="">
+              </a>
+            </div>
+          </nav>
+          <div class="card">
+            <div class="card-body">
+              <b>Rincian Pembayaran</b>
+              <hr>
+              <div class="row" style="font-size: 14px;">
+                <div class="col-7">
+                  Total Harga
+                </div>
+                <div class="col text-right">
+                  <b id="total_harga">0</b>
+                </div>
+              </div>
+              <div class="row" style="font-size: 14px;">
+                  <div class="col-7" >
+                    Total Potongan Diskon
+                  </div>
+                  <div class="col text-right">
+                    <b id="total_diskon">0</b>
+                  </div>
+                </div>
+                <div class="row" style="font-size: 14px;">
+                    <div class="col-7" >
+                      Total Potongan Voucher
+                    </div>
+                    <div class="col text-right">
+                      <b id="total_voucher">0</b>
+                    </div>
+                  </div>
+                <hr>
+                <div class="row" style="font-size: 14px;">
+                  <div class="col-7">
+                    Total Tagihan
+                  </div>
+                  <div class="col text-right text-orange">
+                    <b id="total_tagihan" style="font-size: 16px;">0</b>
+                  </div>
+                </div>
+                <hr>
+                <div id="tambah-voucher" class="input-group mb-3">
+                    <input id="kode_voucher" type="text" class="form-control text-uppercase" placeholder="Kode Voucher" aria-label="Kode Voucher" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-primary" type="button" id="button-addon2" onclick="checkKode()">Cek Kode</button>
+                    </div>
+                  </div>
+                  <div id="delete-voucher" class="input-group mb-3 d-none">
+                      <input id="kode_voucher2" type="text" class="form-control text-uppercase" placeholder="Kode Voucher" aria-label="Kode Voucher" aria-describedby="button-addon2" value="PALU GA ADA" disabled>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-danger" type="button" id="button-addon3" onclick="hapusKode()">Hapus</button>
+                      </div>
+                    </div>
+              <a class="btn btn-primary text-uppercase mt-4 btn-block" href="pembayaran-sukses.html"><b>BAYAR SEKARANG</b></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- Modal -->
+<div class="modal fade" id="notifVoucher" tabindex="-1" role="dialog" aria-labelledby="notifVoucherTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="title-success" class="modal-title">Voucer Berhasil Ditambahkan</h5>
+          <h5 id="title-failed" class="modal-title d-none">Voucer Gagal Ditambahkan</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="content-success" class="modal-body">
+          <i class="fas fa-smile-beam mx-auto d-block" style="color: #007bff56; width: 75px; height: 75px;" ></i>
+          <span class="text-center d-block mt-3">Selamat Anda Mendapatkan Potongan Sebesar <b style="font-size: 18px;">20%</b>.</span>
+        </div>
+        <div id="content-failed" class="modal-body d-none">
+          <i class="fas fa-frown-open mx-auto d-block" style="color: #dc35465e; width: 75px; height: 75px;" ></i>
+          <span class="text-center d-block mt-3">Kode Voucher yang Anda Masukan Tidak Valid. Pastikan Kode Masih Berlaku.</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary w-25 mx-auto" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="account-modal-backdrop" class="modal-backdrop fade" aria-labelledby="account_action" style="z-index: -1;"></div>
+</body>
+<footer>
+  <div class="container pt-5 border-bottom">
+    <div class="row">
+      <div class="col-md-3 col-sm-12 mb-3 text-center">
+        <img src="images/logo_block.png" alt="logo footer" width="100%">
+      </div>
+      <div class="col-md-9 col-sm-12">
+
+        <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Bantuan</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="../sales/sales-performance-market-pipeline.html">Pembayaran</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="/project-management/project-management.html">Pengiriman</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="../workforce/workforce-organization-management-hr.html">Status Pemesanan</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../e-commerce/e-commerce.html"> Cara
+                Berbelanja</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-4"><a
+                href="../finance/finance-accounting-erp.html">Kerja Sama</a></li>
+            <h5 class="mb-4 font-weight-bold text-uppercase">Customer Care</h5>
+            <ul class="list-group">
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#"><b>Buka 24 jam setiap hari</b></a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#" target="_blank"><i class="fas fa-phone-alt mr-1"></i> 081517090386</a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#" target="_blank"><i class="fas fa-envelope mr-1"></i> cs@atmabooks.co.id</a>
+              </li>
+            </ul>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Pembayaran</h5>
+          <div class="d-flex flex-wrap pr-2">
+            <a href="#" style="margin: 2px;"><img src="images/bni.png" alt="bni" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/bri.png" alt="bri" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/cimb.png" alt="cimb" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/visa.png" alt="visa" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/bca.png" alt="bca" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/indomaret.png" alt="indomaret"
+                class="border border-secondary mb-2" style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/mandiri.png" alt="mandiri"
+                class="border border-secondary mb-2" style="border-radius: 5px"></a>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left pl-1">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Info Kami</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tentang</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i> Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Ikuti kami</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#"><i class="fab fa-twitter mr-1"></i> Twitter</a>
+            </li class="list-group-item bg-transparent border-0 p-0 mb-2">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-google-plus mr-1"></i> Google+</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-medium mr-1"></i> Medium</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-facebook mr-1"></i> Facebook</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-youtube mr-1"></i> YouTube</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+<div class="footer-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="py-4 d-flex float-left mt-2">
+          <span style="font-size: 14px; font-weight: 300;">Dibuat dengan <i class="fas fa-heart"></i> & <i
+              class="fas fa-coffee"></i> di Jogjakarta, oleh Jo Vianto, Aldi, Hendry, Iche</span>
+        </div>
+      </div>
+      <div class="col-md-6 float-left">
+        <div class="py-4 d-flex float-right  mt-2">
+          <p style="font-size: 14px; font-weight: 300; " class="mr-4 text-gray">&copy; Atma BookStore</p>
+          <a class="mr-4 text-white" href="../privacy.html">Privasi <i class="fas fa-plus"></i> Kebijakan</a>
+          <a class="text-white" href="../sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="bootstrap-4.3.1-dist/js/jquery-3.4.1.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
+<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script src="owl/dist/owl.carousel.min.js"></script>
+<script src="controller/main.js"></script>
+<script src="controller/bayar.js"></script>
+<script src="fontawesome-free-5.11.2-web/js/all.js"></script>
+</footer>
+
+</html>

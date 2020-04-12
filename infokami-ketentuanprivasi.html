@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/font-icon.css" />
+    <link rel="stylesheet" href="owl/dist/assets/owl.carousel.min.css" />
+    <link href="fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary sticky-top" style="z-index: 8888;">
+      <div class="container">
+        <a class="navbar-brand" href=".">
+          <img src="images/logo_inline.png" height="30" alt="logo">
+        </a>
+        <form class="form-inline" style="width: 60%;" onsubmit="return searcha()">
+          <div class="input-group w-75 float-right" style="margin-left: auto;">
+            <div class="input-group-prepend ">
+              <i class="material-icons input-group-text bg-white">search</i>
+            </div>
+            <input
+              id="search"
+              class="form-control mr-4"
+              type="search"
+              placeholder="Cari"
+              aria-label="Search"
+            />
+          </div>
+        </form>
+        
+         <!-- Dropdown -->
+        <div class="dropdown ">
+          <a
+          id="account_action"
+          class="nav-item nav-link active self align-middle text-white dropdown-toggle  d-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          href="./profile.html"
+          ><i class="fas fa-user mr-2"></i>Hi, <span id="account_name" style="max-width: 100px;">Jo Vianto</span> <i class="fas fa-chevron-down ml-1"></i></a
+          >
+          <div class="dropdown-menu  dropdown-menu-right" id="account_menu" aria-labelledby="account_action" style="margin-top: -1px;">
+            <a class="dropdown-item" href="profil.html?show=v-pills-home"><i class="fas fa-user mr-3"></i>Akun</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-books"><i class="fas fa-book mr-3"></i>Buku Kamu</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-wishlist"><i class="fas fa-heart mr-3"></i><span class="mr-5">Buku Impian</span> <span class="badge badge-pill badge-primary px-2 mr-2"><b  class="wishList_number">0</b></span></a>
+            <a class="dropdown-item" href="#" onclick="logout();"><i class="fas fa-door-open mr-3"></i>Keluar</a>
+          </div>
+        </div>
+        
+        <a
+          id="login_action"
+          class=" nav-item nav-link active self align-middle text-white border rounded"
+          href="./login.html"
+          ><b>Masuk</b></a
+        >
+        <a class=" btn d-inline nav-item nav-link align-middle" style="position: relative;" href="keranjang.html">
+          <i class="material-icons text-white align-middle">
+            shopping_cart
+          </i>
+          <span class="badge badge-danger d-none" id="cart_number" style="position: absolute; top: 6px; right: 6px;">0</span>
+        </a>
+      </div>
+    </nav>
+    <div class="container my-5 text-muted px-5 pb-4" style="border-left-style: solid; border-right-style: solid; border-color: rgb(209, 209, 209); border-left-width: 1px; border-right-width: 1px; ">
+        <div class="col">
+          <div class="row text-dark"><b>Privasi dan Kebijakan Atma Bookstore</b>
+          </div>
+          <div class="row" style="font-size: 13px;">
+          </div>
+        </div>
+        <hr >
+        <p>
+            <b>Ruang Lingkup</b><br><br>
+            1.     Ketentuan dan Kebijakan Privasi merupakan wujud komitmen nyata dari Kami untuk melindungi setiap data dan informasi pribadi dari pengguna (“Pengguna”) situs dan aplikasi yang Kami miliki dan sediakan yang dikenal dengan merek dagang Atma Bookstore (“Situs Atma Bookstore”). Ketentuan dan Kebijakan Privasi menetapkan cara melindungi dan menggunakan data dan informasi yang Pengguna berikan ketika mendaftar dan menggunakan Situs Atma Bookstore.<br><br><br>
+
+            2.     Dengan mendaftar, mengakses dan menggunakan Situs Atma Bookstore, Pengguna menyatakan bahwa setiap data dan informasi yang diberikan adalah benar dan sah serta memberikan persetujuan kepada Kami untuk memperoleh, mengumpulkan, menyimpan, mengelola dan mempergunakan data dan informasi tersebut sesuai dengan Ketentuan dan Kebijakan Privasi ini.<br><br><br>
+
+            3.     Kami mengasumsikan bahwa semua data informasi serta perubahan-perubahan yang Pengguna berikan (jika ada) pada masa sekarang atau di masa yang akan datang adalah akurat dan benar. Apabila data informasi dan perubahan-perubahan yang Pengguna berikan tersebut ternyata terbukti tidak benar, maka dengan ini Kami menyatakan tidak bertanggung jawab atas segala akibat yang dapat terjadi sehubungan dengan pemberian informasi dan perubahan-perubahan yang tidak benar tersebut.<br><br><br>
+
+             
+
+            <b>Data dan Informasi Pengguna</b><br><br>
+            4.     Data informasi Pengguna yang diberikan secara mandiri dan sukarela di Situs Atma Bookstore adalah sebagai berikut :<br><br>
+            a.     Nama lengkap<br>
+            b.     Tanggal lahir<br>
+            c.     Alamat tempat tinggal sekarang dan wajib diperbaharui jika berubah<br>
+            d.     Alamat tujuan pengiriman pesanan<br>
+            e.     Alamat surat elektronik (e-mail)<br>
+            f.      Nomor telepon selular yang aktif dan telah terdaftar<br>
+            g.     Segala data dalam transaksi Pengguna.<br>
+            h.     Metode pembayaran yang digunakan.<br><br><br>
+
+             
+
+            5.     Data informasi yang diberikan secara mandiri dan sukarela di Situs Atma Bookstore pada saat Pengguna melakukan :<br><br>
+            a.     Mendaftar dan memperbaharui (update) akun Pengguna di Situs Atma Bookstore.<br>
+            b.     Menghubungi layanan bagi Pengguna yang Kami sediakan<br>
+            c.     Mengisi survei yang Kami kirimkan atau oleh pihak ketiga yang bekerjasama dengan Kami<br>
+            d.     Menggunakan layanan - layanan yang tersedia pada Situs Atma Bookstore seperti aktivitas pengiriman paket, transaksi pembayaran atas jasa pengiriman, transaksi pembelian produk/jasa yang tersedia di Situs Atma Bookstore.<br>
+            e.     Mengisi data pembayaran pada saat Pengguna melakukan aktivitas transaksi pada Situs Atma Bookstore termasuk namun tidak terbatas pada data rekening bank, kartu kredit, virtual account, gerai retail dan lainnya<br><br><br>
+
+             
+
+            6.     Data informasi yang terekam pada saat Pengguna mempergunakan Situs Atma Bookstore termasuk namun tidak terbatas pada:<br><br>
+            a.     Data lokasi riil dan perkiraannya seperti IP Address, Wi-Fi, Location dan lainnya.<br>
+            b.     Data berupa waktu dari setiap aktivitas Pengguna, seperti aktivitas pendaftaran, akses ke Situs Atma Bookstore dan aktivitas transaksi.<br><br><br>
+
+             
+
+            <b>Keamanan Data dan Informasi Pengguna</b><br><br>
+            7.     Kami berkomitmen untuk memastikan bahwa data informasi yang Pengguna berikan dalam keadaan aman. Untuk mencegah akses yang tidak sah, Kami melakukan tindakan pengamanan fisik, elektronik dan memiliki prosedur yang diperlukan untuk melindungi data informasi Pengguna.<br><br><br>
+
+            8.     Pengguna bertanggung jawab untuk selalu menjaga kerahasiaan data informasi yang ada dalam Situs Atma Bookstore, termasuk namun tidak terbatas pada kerahasiaan sandi yang Pengguna gunakan untuk mengakses akun di Situs Atma Bookstore. Kami tidak bertanggung jawab apabila Pengguna mengalami kerugian yang disebabkan oleh kelalaian Pengguna dalam menjaga kerahasiaan data informasi dalam akun Pengguna di Situs Atma Bookstore, dan dengan ini Pengguna membebaskan Kami, direksi, dewan komisaris, karyawan, agen, dan/atau afiliasi Kami, dari setiap tuntutan, gugatan, ganti rugi, dan/atau klaim yang Pengguna ajukan sehubungan dengan penggunaan dan/atau akses yang tidak sah terhadap akun Pengguna.<br><br><br>
+
+             
+
+            <b>Penggunaan Data dan Informasi Pengguna</b><br><br>
+            9.     Kami akan menggunakan sebagian atau seluruh data dan informasi dari Pengguna yang tersedia di Situs Atma Bookstore untuk hal - hal sebagai berikut :<br><br>
+            a.     Memproses segala bentuk permintaan dan transaksi yang dilakukan oleh Pengguna di Situs Atma Bookstore.<br>
+            b.     Kepentingan pengembangan fitur - fitur dan layanan yang tersedia dalam Situs Atma Bookstore.<br>
+            c.     Keperluan riset berupa analisis data, pengujian, penelitian, memantau dan menganalisis kecenderungan penggunaan dan aktivitas dari Pengguna, pengembangan dan pengujian fitur baru guna meningkatkan keamanan dan kenyamanan pada Pengguna.<br>
+            d.     Komunikasi dengan Pengguna baik melalui surat elektronik (e-mail), surat, telepon, fax untuk membantu dan/atau menyelesaikan kendala yang dialami oleh Pengguna.<br>
+            e.     Melakukan monitoring dan investigasi terhadap aktivitas mencurigakan atau aktivitas yang mengandung unsur kecurangan atau pelanggaran terhadap Perjanjian Kemitraan dan ketentuan hukum yang berlaku. Selanjutnya Kami akan melakukan tindakan - tindakan yang diperlukan sebagai tindak lanjut dari monitoring dan investigasi yang dilakukan.<br>
+            f.      Dalam keadaan tertentu dengan tetap memperhatikan ketentuan peraturan perundang - undangan, kami mungkin perlu menggunakan atau mengungkapkan  data informasi Pengguna untuk tujuan penegakan hukum dan/atau pemenuhan persyaratan hukum dan peraturan yang berlaku, termasuk dalam hal terjadinya.<br><br><br>
+
+             
+
+            <b>Pengungkapan Data dan Informasi Pengguna</b><br><br>
+            10. Kami menjamin tidak ada aktivitas penjualan, pengalihan, distribusi atau meminjamkan data informasi Pengguna kepada pihak ketiga lainnya, tanpa terdapat izin atau perjanjian kerahasiaan, kecuali dalam hal - hal sebagai berikut :<br><br>
+            a.     Pengungkapan data informasi Pengguna kepada anak perusahaan dan afiliasi Kami untuk membantu memberikan layanan dan pengolahan data informasi guna kepentingan dan atas nama Kami.<br>
+            b.     Pengungkapan data informasi Pengguna sehubungan dengan kewajiban hukum dan/atau permintaan yang sah dari aparat penegak hukum.<br>
+            c.     Keperluan komunikasi antara mitra usaha Kami (seperti mitra penyedia layanan pembayaran dan mitra penyedia layanan pengiriman) kepada Pengguna.<br>
+            d.     Keperluan penyelesaian perselisihan antara Pengguna dengan Kami.<br><br><br>
+
+             
+
+            <b>Penyimpanan dan Penghapusan Data Informasi Pengguna</b><br><br>
+            11. Kami akan menyimpan data informasi Pengguna selama akun Pengguna di Situs Atma Bookstore aktif dan akan melakukan penghapusan data informasi sesuai dengan ketentuan peraturan perundang - undangan yang berlaku.<br><br><br>
+
+             
+
+            <b>Pembaharuan</b><br><br>
+            12. Pengguna memahami bahwa Kami sewaktu - waktu dapat melakukan perubahan (pengurangan atau penambahan) ketentuan dalam kebijakan privasi ini. Kami menyarankan agar Pengguna secara seksama dan secara berkala melihat kebijakan privasi ini. Dengan tetap mengakses dan/atau menggunakan Situs Atma Bookstore, maka Pengguna dianggap telah menyetujui perubahan - perubahan dalam kebijakan privasi ini.
+        </p>
+        
+    </div>
+  </body>
+          <footer>
+            <div class="container pt-5 border-bottom">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mb-3 text-center">
+                  <img src="images/logo_block.png" alt="logo footer" width="100%">
+                </div>
+                <div class="col-md-9 col-sm-12">
+          
+                  <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Bantuan</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../sales/sales-performance-market-pipeline.html">Pembayaran</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/project-management/project-management.html">Pengiriman</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../workforce/workforce-organization-management-hr.html">Status Pemesanan</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../e-commerce/e-commerce.html"> Cara Berbelanja</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-4"><a href="../finance/finance-accounting-erp.html">Kerja Sama</a></li>
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Customer Care</h5>
+                    <ul class="list-group">
+                      <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#"><b>Buka 24 jam setiap hari</b></a>
+                      </li>
+                      <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#" target="_blank"><i class="fas fa-phone-alt mr-1"></i> 081517090386</a>
+                      </li>
+                      <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="#" target="_blank"><i class="fas fa-envelope mr-1"></i> cs@atmabooks.co.id</a>
+                      </li>
+                    </ul>
+                  </ul>
+                  </div>
+          
+                  <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Pembayaran</h5>
+                    <div class="d-flex flex-wrap pr-2">
+                      <a href="#" style="margin: 2px;"><img src="images/bni.png" alt="bni" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/bri.png" alt="bri" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/cimb.png" alt="cimb" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/visa.png" alt="visa" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/bca.png" alt="bca" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/indomaret.png" alt="indomaret" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                      <a href="#" style="margin: 2px;"><img src="images/mandiri.png" alt="mandiri" class="border border-secondary mb-2" style="border-radius: 5px"></a>
+                    </div>
+                  </div>
+          
+                  <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left pl-1">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Info Kami</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tentang</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i> Blog</a></li>
+                  </ul>
+                  </div>
+          
+                  <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Ikuti kami</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#"><i class="fab fa-twitter mr-1"></i> Twitter</a>       
+                    </li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-google-plus mr-1"></i> Google+</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-medium mr-1"></i> Medium</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-facebook mr-1"></i> Facebook</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <a href="#" target="_blank"><i class="fab fa-youtube mr-1"></i> YouTube</a>
+                    </li>
+                  </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="py-4 d-flex float-left mt-2">
+                <span style="font-size: 14px; font-weight: 300;">Dibuat dengan <i class="fas fa-heart"></i> & <i class="fas fa-coffee"></i> di Jogjakarta, oleh Jo Vianto, Aldi, Hendry, Iche</span>
+              </div>
+            </div>
+            <div class="col-md-6 float-left">
+              <div class="py-4 d-flex float-right  mt-2">
+                <p style="font-size: 14px; font-weight: 300; " class="mr-4 text-gray">&copy; Atma BookStore</p>  
+                <a class="mr-4 text-white" href="../privacy.html">Privasi <i class="fas fa-plus"></i> Kebijakan</a>
+                <a class="text-white" href="../sitemap.xml">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="bootstrap-4.3.1-dist/js/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="owl/dist/owl.carousel.min.js"></script>
+    <script src="fontawesome-free-5.11.2-web/js/all.js"></script>
+    <script src="controller/main.js"></script>
+  </footer>
+</html>

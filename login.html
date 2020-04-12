@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/font-icon.css" />
+  <link rel="stylesheet" href="owl/dist/assets/owl.carousel.min.css" />
+  <link href="fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    .login-fb {
+      background-color: #4c66a4;
+      border: var(--gray);
+    }
+
+    .login-fb:hover,
+    .login-fb:active {
+      background-color: #6987ce;
+      border: var(--gray);
+    }
+
+    .login-google {
+      background-color: #dd4b39;
+      border: var(--gray);
+    }
+
+    .login-google:hover,
+    .login-google:active {
+      background-color: #c24434;
+      border: var(--gray);
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary sticky-top" style="z-index: 8888;">
+      <div class="container">
+        <a class="navbar-brand" href=".">
+          <img src="images/logo_inline.png" height="30" alt="logo">
+        </a>
+        <form class="form-inline" style="width: 60%;" onsubmit="return searcha()">
+          <div class="input-group w-75 float-right" style="margin-left: auto;">
+            <div class="input-group-prepend ">
+              <i class="material-icons input-group-text bg-white">search</i>
+            </div>
+            <input
+              id="search"
+              class="form-control mr-4"
+              type="search"
+              placeholder="Cari"
+              aria-label="Search"
+            />
+          </div>
+        </form>
+        
+          <!-- Dropdown -->
+        <div class="dropdown ">
+          <a
+          id="account_action"
+          class="nav-item nav-link active self align-middle text-white dropdown-toggle  d-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          href="./profile.html"
+          ><i class="fas fa-user mr-2"></i>Hi, <span id="account_name" style="max-width: 100px;">Jo Vianto</span> <i class="fas fa-chevron-down ml-1"></i></a
+          >
+          <div class="dropdown-menu  dropdown-menu-right" id="account_menu" aria-labelledby="account_action" style="margin-top: -1px;">
+            <a class="dropdown-item" href="profil.html?show=v-pills-home"><i class="fas fa-user mr-3"></i>Akun</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-books"><i class="fas fa-book mr-3"></i>Buku Kamu</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-wishlist"><i class="fas fa-heart mr-3"></i><span class="mr-5">Buku Impian</span> <span class="badge badge-pill badge-primary px-2 mr-2"><b  class="wishList_number">0</b></span></a>
+            <a class="dropdown-item" href="#" onclick="logout();"><i class="fas fa-door-open mr-3"></i>Keluar</a>
+          </div>
+        </div>
+        
+        <a
+          id="login_action"
+          class=" nav-item nav-link active self align-middle text-white border rounded"
+          href="./login.html"
+          ><b>Masuk</b></a
+        >
+        <a class=" btn d-inline nav-item nav-link align-middle" style="position: relative;" href="keranjang.html">
+          <i class="material-icons text-white align-middle">
+            shopping_cart
+          </i>
+          <span class="badge badge-danger d-none" id="cart_number" style="position: absolute; top: 6px; right: 6px;">0</span>
+        </a>
+      </div>
+    </nav>
+  <div class="container py-4">
+    <div class="card w-50 mx-auto p-4 mt-3">
+      <div class="card-body text-center">
+        <h6 class="pb-3">Masuk ke akun kamu</h6>
+        <button class="btn btn-block login-fb btn-primary" onclick="login('email@facebook.com', 'password', href='profil.html');
+        ">
+          <i href="#" class="fab fa-facebook-square mr-3"></i>Masuk dengan
+          Facebook
+        </button>
+        <button class="btn btn-block login-google btn-primary" onclick="login('email@google.com.com', 'password', href='profil.html');
+        ">
+          <i href="#" class="fab fa-google mr-3" ></i>Masuk dengan Google
+        </button>
+        <div class="row py-4">
+          <div class="col">
+            <hr />
+          </div>
+          <span>atau</span>
+          <div class="col">
+            <hr />
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text material-icons" id="basic-addon1">email</span>
+          </div>
+          <input type="text" id="email_in" class="form-control" placeholder="Email" aria-label="Username"
+            aria-describedby="basic-addon1" />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text material-icons" id="basic-addon1">lock</span>
+          </div>
+          <input id="password_in" type="password" class="form-control" placeholder="Password" aria-label="Username"
+            aria-describedby="basic-addon1" />
+        </div>
+        <button class="btn btn-block btn-primary" onclick="login($('#email_in').val(), $('#password_in').val());
+        ">
+          Masuk
+        </b utton>
+        <button class="btn btn-block btn-outline-primary" onclick="login($('#email_in').val(), $('#password_in').val(), href='profil.html');
+            ">
+              Daftar
+            </button>
+        <div class="mt-1">
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="account-modal-backdrop" class="modal-backdrop fade" aria-labelledby="account_action" style="z-index: -1;"></div>
+</body>
+<footer>
+  <div class="container pt-5 border-bottom">
+    <div class="row">
+      <div class="col-md-3 col-sm-12 mb-3 text-center">
+        <img src="images/logo_block.png" alt="logo footer" width="100%">
+      </div>
+      <div class="col-md-9 col-sm-12">
+
+        <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Bantuan</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="../sales/sales-performance-market-pipeline.html">Pembayaran</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="/project-management/project-management.html">Pengiriman</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                href="../workforce/workforce-organization-management-hr.html">Status Pemesanan</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="../e-commerce/e-commerce.html"> Cara
+                Berbelanja</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-4"><a
+                href="../finance/finance-accounting-erp.html">Kerja Sama</a></li>
+            <h5 class="mb-4 font-weight-bold text-uppercase">Customer Care</h5>
+            <ul class="list-group">
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#"><b>Buka 24 jam setiap hari</b></a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#" target="_blank"><i class="fas fa-phone-alt mr-1"></i> 081517090386</a>
+              </li>
+              <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                <a href="#" target="_blank"><i class="fas fa-envelope mr-1"></i> cs@atmabooks.co.id</a>
+              </li>
+            </ul>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Pembayaran</h5>
+          <div class="d-flex flex-wrap pr-2">
+            <a href="#" style="margin: 2px;"><img src="images/bni.png" alt="bni" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/bri.png" alt="bri" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/cimb.png" alt="cimb" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/visa.png" alt="visa" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/bca.png" alt="bca" class="border border-secondary mb-2"
+                style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/indomaret.png" alt="indomaret"
+                class="border border-secondary mb-2" style="border-radius: 5px"></a>
+            <a href="#" style="margin: 2px;"><img src="images/mandiri.png" alt="mandiri"
+                class="border border-secondary mb-2" style="border-radius: 5px"></a>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left pl-1">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Info Kami</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i>Tentang</a></li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="#"></i> Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+          <h5 class="mb-4 font-weight-bold text-uppercase">Ikuti kami</h5>
+          <ul class="list-group">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#"><i class="fab fa-twitter mr-1"></i> Twitter</a>
+            </li class="list-group-item bg-transparent border-0 p-0 mb-2">
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-google-plus mr-1"></i> Google+</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-medium mr-1"></i> Medium</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-facebook mr-1"></i> Facebook</a>
+            </li>
+            <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+              <a href="#" target="_blank"><i class="fab fa-youtube mr-1"></i> YouTube</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="py-4 d-flex float-left mt-2">
+            <span style="font-size: 14px; font-weight: 300;">Dibuat dengan <i class="fas fa-heart"></i> & <i
+                class="fas fa-coffee"></i> di Jogjakarta, oleh Jo Vianto, Aldi, Hendry, Iche</span>
+          </div>
+        </div>
+        <div class="col-md-6 float-left">
+          <div class="py-4 d-flex float-right  mt-2">
+            <p style="font-size: 14px; font-weight: 300; " class="mr-4 text-gray">&copy; Atma BookStore</p>
+            <a class="mr-4 text-white" href="../privacy.html">Privasi <i class="fas fa-plus"></i> Kebijakan</a>
+            <a class="text-white" href="../sitemap.xml">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="bootstrap-4.3.1-dist/js/jquery-3.4.1.min.js"></script>
+  <script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
+  <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="owl/dist/owl.carousel.min.js"></script>
+  <script src="fontawesome-free-5.11.2-web/js/all.js"></script>
+  <script src="controller/main.js"></script>
+  <script src="controller/login.js"></script>
+</footer>
+
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/font-icon.css" />
+    <link rel="stylesheet" href="owl/dist/assets/owl.carousel.min.css" />
+    <link href="fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      .btn-query.active{
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary sticky-top" style="z-index: 8888;">
+      <div class="container">
+        <a class="navbar-brand" href=".">
+          <img src="images/logo_inline.png" height="30" alt="logo">
+        </a>
+        <form class="form-inline" style="width: 60%;" onsubmit="return searcha()">
+          <div class="input-group w-75 float-right" style="margin-left: auto;">
+            <div class="input-group-prepend ">
+              <i class="material-icons input-group-text bg-white">search</i>
+            </div>
+            <input
+              id="search"
+              class="form-control mr-4"
+              type="search"
+              placeholder="Cari"
+              aria-label="Search"
+            />
+          </div>
+        </form>
+        
+         <!-- Dropdown -->
+        <div class="dropdown ">
+          <a
+          id="account_action"
+          class="nav-item nav-link active self align-middle text-white dropdown-toggle  d-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          href="./profile.html"
+          ><i class="fas fa-user mr-2"></i>Hi, <span id="account_name" style="max-width: 100px;">Jo Vianto</span> <i class="fas fa-chevron-down ml-1"></i></a
+          >
+          <div class="dropdown-menu  dropdown-menu-right" id="account_menu" aria-labelledby="account_action" style="margin-top: -1px;">
+            <a class="dropdown-item" href="profil.html?show=v-pills-home"><i class="fas fa-user mr-3"></i>Akun</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-books"><i class="fas fa-book mr-3"></i>Buku Kamu</a>
+            <a class="dropdown-item" href="profil.html?show=v-pills-wishlist"><i class="fas fa-heart mr-3"></i><span class="mr-5">Buku Impian</span> <span class="badge badge-pill badge-primary px-2 mr-2"><b  class="wishList_number">0</b></span></a>
+            <a class="dropdown-item" href="#" onclick="logout();"><i class="fas fa-door-open mr-3"></i>Keluar</a>
+          </div>
+        </div>
+        
+        <a
+          id="login_action"
+          class=" nav-item nav-link active self align-middle text-white border rounded"
+          href="./login.html"
+          ><b>Masuk</b></a
+        >
+        <a class=" btn d-inline nav-item nav-link align-middle" style="position: relative;" href="keranjang.html">
+          <i class="material-icons text-white align-middle">
+            shopping_cart
+          </i>
+          <span class="badge badge-danger d-none" id="cart_number" style="position: absolute; top: 6px; right: 6px;">0</span>
+        </a>
+      </div>
+    </nav>
+    <div class="container pt-5">
+      <div class="row">
+        <div
+          id="carouselExampleIndicators"
+          class="col carousel slide p-0 ml-3 overflow-hidden rounded"
+          data-ride="carousel"
+          style="width: 70% !important;"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="http://www.gramedia.com">
+                <img
+                  class="d-block"
+                  src="https://cdn.gramedia.com/uploads/marketing/WhatsApp_Image_2019-11-18_at_16.49.40.jpeg"
+                  alt="First slide"
+                />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a  href="http://www.gramedia.com">
+                <img
+                  class="d-block"
+                  src="https://cdn.gramedia.com/uploads/marketing/Design_Miss_Irit_28-30November-01.jpg"
+                  alt="Second slide"
+                />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a  href="http://www.gramedia.com">
+                <img
+                  class="d-block"
+                  src="https://cdn.gramedia.com/uploads/marketing/GAMPAR_NOV_NonAds_Storefront_AbsYnxu.jpg"
+                  alt="Third slide"
+                />
+              </a>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+            style="opacity: 0.8;"
+          >
+            <div class="prev-corousel p-2 mr-3">
+              <i class="material-icons text-danger" style="font-size: 30px;"
+                >keyboard_arrow_left</i
+              >
+            </div>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+            style="opacity: 0.8;"
+          >
+            <div class="prev-corousel p-2 ml-3">
+              <i class="material-icons text-danger" style="font-size: 30px;"
+                >keyboard_arrow_right</i
+              >
+            </div>
+          </a>
+        </div>
+        <div class="promo-cell col-lg-4 d-flex flex-column align-items-stretch">
+          <div class="flex-fill overflow-hidden rounded mb-1">
+            <a  href="http://www.gramedia.com">
+              <img
+                class="d-block "
+                src="https://cdn.gramedia.com/uploads/marketing/hanya_3_hari_bip_storefront.jpg"
+                alt="Third slide"
+              />
+            </a>
+          </div>
+          <div class="flex-fill overflow-hidden rounded mt-1">
+            <a  href="http://www.gramedia.com">
+              <img
+                class="d-block "
+                src="https://cdn.gramedia.com/uploads/marketing/Design_Storefront_3_NxpsYZT.jpg"
+                alt="Third slide"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3 flash-sale-container overflow-hidden">
+      <div class="flash-sale">
+        <div class="container py-4 ">
+          <div class="text-white h5 mb-3">
+            <i
+              class="text-warning material-icons align-middle bg-white p-2 rounded-circle mr-2"
+              >flash_on</i
+            >
+            <span class="font-weight-bold mr-2 ">Flash Sale</span>
+            <span
+              class="bg-white p-2 rounded align-middle text-dark h6 flash-sale-jam"
+              >00</span
+            >
+            :
+            <span
+              class="bg-white p-2 rounded align-middle text-dark h6 flash-sale-menit"
+              >00</span
+            >
+            :
+            <span
+              class="bg-white p-2 rounded align-middle text-dark h6 flash-sale-detik"
+              >00</span
+            >
+          </div>
+          <div class="caraousel-container">
+            <div class="caraousel-nav">
+              <button class="nav-button nav-left hide d-none" onclick="left_flash_sale()">
+                <i class="material-icons text-danger align-middle" style="font-size: 30px;"
+                  >keyboard_arrow_left</i
+                >
+              </button>
+              <button class="nav-button nav-right " onclick="right_flash_sale()">
+                  <i class="material-icons text-danger align-middle" style="font-size: 30px;"
+                    >keyboard_arrow_right</i
+                  >
+                </button>
+            </div>
+            <div class="owl-carousel flash-sale-carousel">
+              <!-- <div class="item rounded overflow-hidden bg-light">
+                <div class="image-container">
+                  <img
+                    src="https://cdn.gramedia.com/uploads/items/Syekh_Abdul_Qadir_Jailani_Karamah__Nasihat__w200_hauto.jpg"
+                    alt="Tuner Image"
+                  />
+                </div>
+                <div class="p-2 pb-3">
+                  <div class="text-truncate katalog-judul">
+                    Judulaaaaaaaaaasssssss
+                  </div>
+                  <div class=" katalog-pengarang text-truncate">Pengarang</div>
+                  <div class=" katalog-harga mt-1">Harga</div>
+                  <div class=" katalog-diskon">Diskon <span class="badge badge-danger">Danger</span></div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container pb-5">
+        <h5 class="mb-4">Paling Laris</h5>
+        <div class="d-flex flex-row justify-content-between paling-laris-container">
+          <!-- <div class="shadow rounded overflow-hidden bg-white">
+            <div class="image-container">
+              <img
+                src="https://cdn.gramedia.com/uploads/items/Syekh_Abdul_Qadir_Jailani_Karamah__Nasihat__w200_hauto.jpg"
+                alt="Tuner Image"
+              />
+            </div>
+            <div class="p-2 pb-3">
+              <div class="text-truncate katalog-judul">
+                Judulaaaaaaaaaasssssss
+              </div>
+              <div class=" katalog-pengarang">Pengarang</div>
+              <div class=" katalog-harga mt-1">Harga</div>
+              <div class=" katalog-diskon">Diskon <span class="badge badge-danger">Danger</span></div>
+            </div>
+          </div> -->
+        </div>
+        <h5 class="mb-4 mt-5">Paling Populer</h5>
+        <div class="d-flex flex-row justify-content-between paling-populer-container">
+        </div>
+        <div class="sticky-top" style="padding-top: 59px; ">
+            <nav class="navbar navbar-light bg-white ">
+                <div class="pt-2">
+                    <button id="all" class="btn btn-outline-warning btn-query active" style="border-radius: 16px;"onclick="query('all')">Semua Genre</button>
+                    <button id="romansa" class="btn btn-outline-warning btn-query" style="border-radius: 16px;"  onclick="query('Romansa')">Romansa</button>
+                    <button id="fantasi" class="btn btn-outline-warning btn-query" style="border-radius: 16px;"  onclick="query('Fantasi')">Fantasi</button>
+                    <button id="religius" class="btn btn-outline-warning btn-query" style="border-radius: 16px;"  onclick="query('Religius')">Religius</button>
+                </div>
+              </nav>
+        </div>
+          <h5 class="mb-4 mt-5">Rekomendasi Untuk Kamu</h5>
+        <div class="d-flex flex-row justify-content-between flex-wrap rekomendasi-container mb-4">
+        </div>
+    </div>
+    <div id="account-modal-backdrop" class="modal-backdrop fade" aria-labelledby="account_action" style="z-index: -1;"></div>
+    
+  </body>
+  <footer>
+    <div class="container"><link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+        <footer>
+          <div class="container pt-5 border-bottom">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mb-3 text-center">
+                <img src="images/logo_block.png" alt="logo footer" width="100%">
+              </div>
+              <div class="col-md-9 col-sm-12">
+        
+                <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+                  <h5 class="mb-4 font-weight-bold text-uppercase">Bantuan</h5>
+                <ul class="list-group">
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="bantuan-pembayaran.html">Pembayaran</a></li>
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="bantuan-cara-berbelanja.html"> Cara Berbelanja</a></li>
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-4"><a href="bantuan-kerjasama.html">Kerja Sama</a></li>
+                  <h5 class="mb-4 font-weight-bold text-uppercase">Layanan Konsumen</h5>
+                  <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <div class="text-primary"><b>Buka 24 jam setiap hari</b></div>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                      <div target="_blank" class="text-primary"><i class="fas fa-phone-alt mr-1 text-primary"></i> 081517090386</div>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2 text-primary">
+                      <div target="_blank"><i class="fas fa-envelope mr-1"></i> cs@atmabooks.co.id</div>
+                    </li>
+                  </ul>
+                </ul>
+                </div>
+        
+                <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
+                  <h5 class="mb-4 font-weight-bold text-uppercase">Pembayaran</h5>
+                  <div class="d-flex flex-wrap pr-2">
+                    <div style="margin: 2px;"><img src="images/bni.png" alt="bni" class="border border-secondary mb-2" style="border-radius: 5px"></div>
+                    <div style="margin: 2px;"><img src="images/bri.png" alt="bri" class="border border-secondary mb-2" style="border-radius: 5px"></div>
+                    <div style="margin: 2px;"><img src="images/cimb.png" alt="cimb" class="border border-secondary mb-2" style="border-radius: 5px"></div>
+                    <div style="margin: 2px;"><img src="images/visa.png" alt="visa" class="border border-secondary mb-2" style="border-radius: 5px"></div>
+                    <div style="margin: 2px;"><img src="images/bca.png" alt="bca" class="border border-secondary mb-2" style="border-radius: 5px"></div>
+                    <div style="margin: 2px;"><img src="images/indomaret.png" alt="indomaret" class="border border-secondary mb-2" style="border-radius: 5px"></div>
+                    <div style="margin: 2px;"><img src="images/mandiri.png" alt="mandiri" class="border border-secondary mb-2" style="border-radius: 5px"></div>
+                  </div>
+                </div>
+        
+                <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left pl-1">
+                  <h5 class="mb-4 font-weight-bold text-uppercase">Info Kami</h5>
+                <ul class="list-group">
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="infokami-tentang.html"></i>Tentang</a></li>
+                </ul>
+                </div>
+        
+                <div class="col-md-3 col-sm-6 col-6 mb-3 p-0 float-left">
+                  <h5 class="mb-4 font-weight-bold text-uppercase">Ikuti kami</h5>
+                <ul class="list-group">
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <a href="#"><i class="fab fa-linkedin mr-1"></i> LinkedIn</a>
+                  </li>
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <a href="#"><i class="fab fa-twitter mr-1"></i> Twitter</a>       
+                  </li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <a href="#" target="_blank"><i class="fab fa-facebook mr-1"></i> Facebook</a>
+                  </li>
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                    <a href="#" target="_blank"><i class="fab fa-youtube mr-1"></i> YouTube</a>
+                  </li>
+                </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="py-4 d-flex float-left mt-2">
+              <span style="font-size: 14px; font-weight: 300;">Dibuat dengan <i class="fas fa-heart"></i> & <i class="fas fa-coffee"></i> di Jogjakarta, oleh Jo Vianto, Aldi, Hendry, Iche</span>
+            </div>
+          </div>
+          <div class="col-md-6 float-left">
+            <div class="py-4 d-flex float-right  mt-2">
+              <p style="font-size: 14px; font-weight: 300; " class="mr-4 text-gray">&copy; Atma BookStore</p>  
+              <a class="mr-4 text-white" href="infokami-ketentuanprivasi.html">Privasi <i class="fas fa-plus"></i> Kebijakan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="bootstrap-4.3.1-dist/js/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/popper.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="owl/dist/owl.carousel.min.js"></script>
+    <script src="controller/main.js"></script>
+    <script src="fontawesome-free-5.11.2-web/js/all.js"></script>
+    <script>
+      function n(n){
+          return n > 9 ? "" + n: "0" + n;
+      }
+
+      var countDownDate = new Date(new Date().getTime() + 14 * 1000 * 3600);
+      setInterval(() => {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        // Time calculations for days, hours, minutes and seconds
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        $(".flash-sale-jam").html(n(hours));
+        $(".flash-sale-menit").html(n(minutes));
+        $(".flash-sale-detik").html(n(seconds));
+      }, 1000);
+
+      function query(str) {
+        var i = 0;
+        $(".rekomendasi-container").html('')
+        $(".btn-query.active").removeClass('active')
+        $("#"+str.toLowerCase()).addClass('active')
+        all.forEach(element => {
+        if(str == element.genre || str == 'all'){
+          $(".rekomendasi-container").append('<a href="detail.html'+"?from=all.json&id="+i+'" class= "overflow-hidden flex-shrink-1 rounded shadow" style="width: 176px; margin-bottom:12px"><div class=" bg-white text-dark">' +
+        '<div class="image-container">'+
+        '<img src="'+element.photoUrl+'" alt="Tuner Image" class="d-block mx-auto"/>'+
+        '</div>'+
+        '<div class="p-2 pb-3">'+
+          '<div class="text-truncate katalog-judul">'+
+            element.judul+
+          '</div>'+
+            '<div class=" katalog-pengarang text-truncate">'+element.pengarang+'</div>'+
+            '<div class=" katalog-harga mt-1">'+formatter.format(element.harga - element.harga * ((element.persenDiskon === undefined || element.persenDiskon == 0 ) ? 0 : element.persenDiskon)/100)+'</div>'+
+            '<div class=" katalog-diskon">'+((element.persenDiskon === undefined || element.persenDiskon == 0 ) ? "-": '<del class="mr-2">'+ formatter.format(element.harga) +'</del>'+ '<span class="badge badge-danger">'+element.persenDiskon + ' %'+'</span>') +'</div>'+
+          '</div>'+
+        '</div></a>')
+        }
+        i++;
+    });
+      }
+      
+    </script>
+    <script src="controller/index.js"></script>
+  </footer>
+</html>
